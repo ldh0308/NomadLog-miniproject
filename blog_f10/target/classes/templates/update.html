@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>update</title>
+</head>
+<body>
+    <!-- Thymeleaf에서는 th:action을 사용하여 form의 action을 설정합니다. -->
+    <form th:action="@{/member/update}" method="post" th:object="${info}" name="updateForm"> <!-- updateForm은 form태그 이름임 -->
+    	<!-- name은 서버로 데이터를 전송 및 서버에서 해당 데이터를 처리하는 데 사용, id 속성은 문서 내에서 고유한 식별자를 나타냄 -->
+        id: <input type="text" th:field="*{memberId}" readonly="readonly"> <!-- readonly는  -->
+        email: <input type="text" th:field="*{memberEmail}" >
+        password: <input type="text" id="memberPassword"> <!-- th:field="*{memberPassword}"  -->
+        name: <input type="text" th:field="*{memberName}" readonly="readonly">
+        age: <input type="text" th:field="*{memberAge}">
+        <input type="button" value="수정" onclick="update()"> <!-- 값을 입력하고 함수 등 호출하기 위해 button 사용 -->
+        <!-- onclick="update()"으로 아래 update() 메서드 실행 -->
+    </form>
+
+</body>
+
+	<script th:inline="javascript">
+	    const update = () => {
+	        const passwordDB = /*[[${info.memberPassword}]]*/ '';
+	        const password = document.getElementById("memberPassword").value;
+	        if (passwordDB == password) {
+	            document.updateForm.submit();
+	        } else {
+	            alert("비밀번호가 일치하지 않습니다!");
+	        }
+	    }
+	</script>
+
+</html>
