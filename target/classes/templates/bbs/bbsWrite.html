@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>bbs_insert</title>
+	<link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+	<body>
+			<div class="container">
+			<h2>게시글 등록</h2>
+			<form id="frm" name="frm" method="post" action="/bbs/write"
+			      enctype="multipart/form-data">
+			      
+			<table class="bbs_detail">
+				<tr>
+					<select class="form-select" aria-label="Default select example">
+						<option selected>국가를 선택하세요</option> <!--컨트롤러 수정해야함-->
+						<option th:each="con : ${countryList}" th:value="${con.countryName}"
+								th:text="${con.countryName}"></option>
+					</select> <br>
+				</tr>
+				<tr>
+					<td>제목</td>
+					<td><input type="text" id="title" name="title"></td>
+				</tr>
+				<tr>
+					<td>내용</td>
+					<td colspan="3">
+						<textarea id="contents" name="contents"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td>태그</td>
+					<td colspan="3">
+						<textarea id="content" name="content"></textarea>
+					</td>
+				</tr>
+			</table>
+			<input type="submit" id="submit" value="저장" class="btn">
+		</form>
+	</div>
+</body>
+</html>
