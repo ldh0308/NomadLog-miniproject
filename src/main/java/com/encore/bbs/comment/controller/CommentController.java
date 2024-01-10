@@ -28,14 +28,15 @@ public class CommentController {
         return "redirect:/bbs/" + bbsId;
     }
 
-    @PostMapping(value = "/save", consumes = "application/json")
-    public String save(@RequestBody CommentDTO commentDTO) {
-        commentService.addComment(commentDTO);
+    @PostMapping(value = "/bbs/{bbsId}", consumes = "application/json")
+    public String save(@RequestParam Long bbsId, CommentDTO commentDTO) {
+        Long id = commentService.addComment(commentDTO);
+        //commentService.addComment(commentDTO);
 
         // 댓글 작성 성공하면 댓글 목록을 가져와서 리턴
-        List<CommentDTO> commentDTOList = commentService.getCommentsByBbsId(commentDTO.getBbsId());
+       // List<CommentDTO> commentDTOList = commentService.getCommentsByBbsId(commentDTO.getBbsId());
 
-        return "redirect:/bbs/" + bbsId;
+        return "redirect:/bbs";
     }
 
     // 조회 - 상세페이지/목록보이기

@@ -1,5 +1,7 @@
 package com.encore.bbs.comment.service;
 
+import com.encore.bbs.board.dto.BbsDTO;
+import com.encore.bbs.board.dto.HashTag;
 import com.encore.bbs.board.mapper.BbsMapper;
 import com.encore.bbs.comment.dto.CommentDTO;
 import com.encore.bbs.comment.mapper.CommentMapper;
@@ -21,14 +23,22 @@ public class CommentServiceImpl implements CommentService {
         return commentMapper.getCommentsByBbsId(bbsId);
     }
 
-    @Override
-    @Transactional
-    public void addComment(CommentDTO commentDTO) {
-        CommentDTO bbsId = new CommentDTO();
+    //@Override
+    //@Transactional
+    //public Long addComment(BbsDTO bbsDTO, String content) {
+        //CommentDTO bbsId = new CommentDTO();
        //commentMapper.getCommentsByBbsId(bbsId);
        //commentMapper.addComment(commentDTO);
+       // Long savedBbsId = CommentMapper.getLatestBbsId();
 
-    }
+       // HashTag hashTag = new HashTag();
+      //  hashTag.setBbsId(savedBbsId); // 해당 객체에 저장아이디 반환
+       // hashTag.setContent(content); // 해당 객체에 작성한 내용 반환
+
+        //해시태그 인서트
+       // bbsmapper.insertHashtag(hashTag);
+
+    //}
 
     @Override
     @Transactional
@@ -55,5 +65,10 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public CommentDTO findCommentById(Long commentId) {
         return commentMapper.findCommentById(commentId);
+    }
+
+    @Override
+    public Long addComment(CommentDTO commentDTO) {
+        return commentMapper.addComment(commentDTO);
     }
 }

@@ -5,50 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a4ecae7-5660-40a3-87f4-426ac80bd482" name="Changes" comment="Refactor : 폴더 업데이트">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/board/dto/CountryDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/comment/controller/CommentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/comment/dto/CommentDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/comment/mapper/CommentMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/comment/service/CommentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/comment/service/CommentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/CommentMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/encore/bbs/board/service/BbsServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-01-08__11_07__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-01-08__11_07__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-01-08__11_07__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-01-08__11_07__Changes_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/BlogBApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/BbsApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/board/controller/BbsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/board/controller/BbsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/board/dto/HashTag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/board/dto/HashTag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/board/mapper/BbsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/board/mapper/BbsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/board/service/BbsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/board/service/BbsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/board/service/BbsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/board/service/BbsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/memberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/memberMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/sql-bbs-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/sql-bbs-mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/comment/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/comment/controller/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/comment/mapper/CommentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/comment/mapper/CommentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/comment/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/comment/service/CommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/comment/service/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/comment/service/CommentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CommentMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bbsDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bbsDetail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bbsWrite.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bbsWrite.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bbs-table.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/encore/bbs/BlogBApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/encore/bbs/board/controller/BbsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/encore/bbs/board/controller/BbsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/encore/bbs/board/dto/HashTag.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/encore/bbs/board/dto/HashTag.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/encore/bbs/board/mapper/BbsMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/encore/bbs/board/mapper/BbsMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/encore/bbs/board/service/BbsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/encore/bbs/board/service/BbsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/encore/bbs/board/service/BbsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/encore/bbs/board/service/BbsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/memberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/memberMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/sql-bbs-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/sql-bbs-mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/bbs/bbsDetail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/bbs/bbsList.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/bbs/bbsWrite.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/bbsWrite.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/bbsWrite.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/encore/bbs/board/BbsApplicationTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/bbs/BbsApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/bbsDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/bbsDetail.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +141,7 @@
       <option name="presentableId" value="Default" />
       <updated>1704849875050</updated>
       <workItem from="1704849876146" duration="10195000" />
-      <workItem from="1704865607775" duration="1941000" />
+      <workItem from="1704865607775" duration="6021000" />
     </task>
     <task id="LOCAL-00001" summary="Refactor : 폴더 업데이트">
       <option name="closed" value="true" />
@@ -187,7 +151,31 @@
       <option name="project" value="LOCAL" />
       <updated>1704849941085</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Refactor : 폴더 업데이트">
+      <option name="closed" value="true" />
+      <created>1704867984576</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1704867984576</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Refactor : 폴더 업데이트">
+      <option name="closed" value="true" />
+      <created>1704867990832</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1704867990832</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Refactor : 폴더 업데이트">
+      <option name="closed" value="true" />
+      <created>1704867996714</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1704867996714</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

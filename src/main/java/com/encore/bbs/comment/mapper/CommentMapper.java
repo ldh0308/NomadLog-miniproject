@@ -23,7 +23,7 @@ public interface CommentMapper {
      * 새로운 댓글을 추가하는 메서드
      * @param commentDTO 추가할 댓글 정보
      */
-    void addComment(CommentDTO commentDTO);
+    Long addComment(CommentDTO commentDTO);
 
 
     /**
@@ -50,5 +50,7 @@ public interface CommentMapper {
      * @return 댓글 전체 개수
      */
     int countAllComments();
+
+    int findBbsId();
 
 }
