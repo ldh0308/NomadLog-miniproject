@@ -10,8 +10,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			ORDER BY bbs_id DESC
 	</select>
 	<insert id="insertBbs" parameterType="BbsDTO" useGeneratedKeys="true" keyProperty="bbsId">
-		INSERT INTO bbs(title, contents, created_at)
-		VALUES (#{title},#{contents},NOW())
+		INSERT INTO bbs(title, contents, created_at, country_id)
+		VALUES (#{title},#{contents},NOW(), #{countryId})
 	</insert>
 	<select id="selectBbsDetail" parameterType="int" resultType="BbsDTO">
 		<!-- select * from bbs WHERE bbs_id = #{bbsId} -->
@@ -43,5 +43,27 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	    WHERE 
 	    	bbs_id=#{bbsId}
 </update>
+	<insert id="insertHashtag" useGeneratedKeys="true" keyProperty="hashtagId" parameterType="com.encore.bbs.board.dto.HashTag">
+		INSERT INTO hashtag(bbs_id, content)
+		VALUES (#{bbsId}, #{content});
+	</insert>
+
+	<!-- 최근 저장한 게시물 id-->
+	<select id="getLatestBbsId" parameterType="Long">
+		SELECT LAST_INSERT_ID()
+	</select>
+
+	<!--국가정보 넣기-->
+	<select id="getCountryList" resultType="com.encore.bbs.board.dto.CountryDto">
+		SELECT * FROM countries;
+	</select>
+
+	<!-- 국가 불러오기-->
+	<select id="selectCountryBbs" parameterType="Long" resultType="com.encore.bbs.board.dto.CountryDto">
+		SELECT country_id
+		FROM countries
+		WHERE country_name = #{countryName};
+	</select>
+
 
 </mapper> 

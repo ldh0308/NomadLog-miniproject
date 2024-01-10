@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication // Spring Boot 애플리케이션의 시작점(Entry Point)을 나타낸다.
-public class BlogBApplication {
+public class BbsApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BlogBApplication.class, args);
+		SpringApplication.run(BbsApplication.class, args);
 		// SpringApplication.run(BlogBApplication.class, args) 메서드가 호출되면, Spring Boot 애플리케이션이 시작된다.
 		// Application-context를 설정하고 실행하며, 내부적으로 필요한 빈들을 로드하고 초기화한다.
 		// 이래서 framework도 공부해야한다. 자동 실행, 설정 내용을 모르면 나중에 어떻게 고치겠는가.

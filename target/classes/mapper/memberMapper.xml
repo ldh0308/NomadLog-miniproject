@@ -47,6 +47,8 @@
     	delete from usersTBL where member_code = #{loginId}
     </delete>
 
+
+
 </mapper>
 
 

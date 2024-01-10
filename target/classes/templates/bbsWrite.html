@@ -13,6 +13,19 @@
 			      
 			<table class="bbs_detail">
 				<tr>
+					<select class="form-select" aria-label="Default select example">
+						<option selected>국가를 선택하세요</option>
+						<option th:each="con : ${countryDtoList}" th:value="${con.countryName}"
+								th:text="${con.countryName}"></option>
+					</select> <br>
+					<!--                <td>국가</td>-->
+					<!--                <td><select th:field="*{countryList}" class="form-select">-->
+					<!--                    <option value="">국가 선택</option>-->
+					<!--                    <option th:each="con : ${countryList}" th:value="${con.countryName}"-->
+					<!--                            th:text="${con.countryName}"></option>-->
+					<!--                </select></td>-->
+				</tr>
+				<tr>
 					<td>제목</td>
 					<td><input type="text" id="title" name="title"></td>
 				</tr>
@@ -20,7 +33,12 @@
 					<td colspan="2">
 						<textarea id="contents" name="contents"></textarea>
 					</td>
-				</tr>	
+				</tr>
+				<tr>
+					<td colspan="2">
+						<textarea id="content" name="content"></textarea>
+					</td>
+				</tr>
 			</table>
 			<input type="submit" id="submit" value="저장" class="btn">
 		</form>

@@ -2,14 +2,13 @@ package com.encore.bbs.board.controller;
 
 import java.util.List;
 
+import com.encore.bbs.board.dto.CountryDto;
+import com.encore.bbs.board.dto.HashTag;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -19,37 +18,38 @@ import com.encore.bbs.board.service.BbsService;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
+@RequiredArgsConstructor
 public class BbsController { 
 	
-	@Autowired
-	private BbsService bbsService; 
-	
+	private final BbsService bbsService;
+
 	@GetMapping("bbs")  //http://localhost:8080/bbs
 	public ModelAndView openBbsList() throws Exception{
 		ModelAndView mv = new ModelAndView("bbsList");
-		
+
 		List<BbsDTO> list = bbsService.selectBbsList();
 		mv.addObject("list", list);
-		
 		return mv;
 	}
 
 	
 	@GetMapping("bbs/write")
-	public String openBbsWrite(HttpSession session) throws Exception {
+	public String openBbsWrite(HttpSession session,Model model) throws Exception {
+		List<CountryDto> countryDtoList = bbsService.getCountryList();
+		model.addAttribute("countryDtoList", countryDtoList);
+
 		Integer loginId = (Integer) session.getAttribute("loginId");
 		if(loginId == null) {
 			return "login";
 		}else {
 			return "bbsWrite";
 		}
-		
-		
 	}
 
 	@RequestMapping(value= "/bbs/write", method=RequestMethod.POST)
-	public String insertBbs(BbsDTO bbs, MultipartHttpServletRequest multipartHttpServletRequest) throws Exception {
-		bbsService.insertBbs(bbs, multipartHttpServletRequest);
+	public String insertBbs(BbsDTO bbs, @RequestParam String content) throws Exception {
+
+		bbsService.insertBbs(bbs, content); //게시글하고 태그 저장 메서드
 
 
 		return "redirect:/bbs";
@@ -62,7 +62,7 @@ public class BbsController {
 		Integer loginId = (Integer)session.getAttribute("loginId");
 		BbsDTO bbs = bbsService.selectBbsDetail(bbsId);
 		mv.addObject("bbs", bbs);
-		 mv.addObject("loginId", loginId); 
+		mv.addObject("loginId", loginId);
 		return mv;
 
 	}

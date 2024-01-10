@@ -2,7 +2,8 @@ package com.encore.bbs.board.service;
 
 import java.util.List;
 
-import org.springframework.web.multipart.MultipartHttpServletRequest;
+import com.encore.bbs.board.dto.CountryDto;
+import com.encore.bbs.board.dto.HashTag;
 
 import com.encore.bbs.board.dto.BbsDTO;
 
@@ -10,8 +11,8 @@ import com.encore.bbs.board.dto.BbsDTO;
 public interface BbsService {
 	
 	 List<BbsDTO> selectBbsList() throws Exception ;
-	 
-	 void insertBbs(BbsDTO bbs, MultipartHttpServletRequest multipartHttpServletRequest) throws Exception;
+
+	public void insertBbs(BbsDTO bbs, String content) throws Exception;
 	 
 	 BbsDTO selectBbsDetail(int bbsId) throws Exception;
 	 
@@ -19,6 +20,14 @@ public interface BbsService {
 	 
 	 void deleteBbs(int bbsId) throws Exception;
 
+	void insertHashtag(HashTag hashTag)throws Exception;
 
+	Long getLatestBbsId();
+
+	List<CountryDto> getCountryList();
+
+	Long selectCountryBbs(Long countryId);
+
+	//void insertCountry(BbsDTO bbs) throws Exception;
 
 }
