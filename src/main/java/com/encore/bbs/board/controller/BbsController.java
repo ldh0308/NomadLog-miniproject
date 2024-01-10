@@ -25,7 +25,7 @@ public class BbsController {
 
 	@GetMapping("bbs")  //http://localhost:8080/bbs
 	public ModelAndView openBbsList() throws Exception{
-		ModelAndView mv = new ModelAndView("bbsList");
+		ModelAndView mv = new ModelAndView("/bbs/bbsList");
 
 		List<BbsDTO> list = bbsService.selectBbsList();
 		mv.addObject("list", list);
@@ -42,7 +42,7 @@ public class BbsController {
 		if(loginId == null) {
 			return "login";
 		}else {
-			return "bbsWrite";
+			return "/bbs/bbsWrite";
 		}
 	}
 
@@ -58,7 +58,7 @@ public class BbsController {
 	
 	@GetMapping("bbs/{bbsId}")
 	public ModelAndView openBbsDetail(@PathVariable("bbsId") int bbsId, HttpSession session) throws Exception {
-		ModelAndView mv = new ModelAndView("bbsDetail");
+		ModelAndView mv = new ModelAndView("/bbs/bbsDetail");
 		Integer loginId = (Integer)session.getAttribute("loginId");
 		BbsDTO bbs = bbsService.selectBbsDetail(bbsId);
 		mv.addObject("bbs", bbs);
