@@ -5,98 +5,87 @@ USE travel_blog;
 DROP TABLE IF EXISTS usersTBL;
 CREATE TABLE usersTBL
 (
-    memCode INT NOT NULL PRIMARY KEY,
-    memID VARCHAR(15) NOT NULL,
-    memPW VARCHAR(15) NOT NULL,
-    memName VARCHAR(10) NOT NULL,
-    memEmail VARCHAR(30) NOT NULL,
-    memAge INT NOT NULL,
-    memGender VARCHAR(10) NOT NULL CHECK (memGender IN ('남자', '여자'))
+	 member_code INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    member_id VARCHAR(15) NOT NULL UNIQUE,
+    member_password VARCHAR(15) NOT NULL,
+    member_name VARCHAR(10) NOT NULL,
+    member_email VARCHAR(30) NOT NULL UNIQUE,
+    member_age INT NOT NULL
+);
+insert into usersTBL VALUES(NULL, 'min' ,'1234','이경민', 'gyeongmin55@naver.com',27);
+insert into usersTBL VALUES(NULL, 'mini' ,'123','이경민2', 'gyeongmin455@naver.com',22);
+SELECT * FROM usersTBL;
+-- 대륙 TABLE SQL
+CREATE TABLE `continents` (
+                              `continent_Id` INT(11) NOT NULL AUTO_INCREMENT,
+                              `continent_name` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+                              PRIMARY KEY (`continent_Id`) USING BTREE
+);
+insert into continents VALUES(NULL, 'eu');
+SELECT * FROM continents;
+
+-- 국가 TABLE SQL
+CREATE TABLE `countries` (
+                             `country_id` INT(11) NOT NULL AUTO_INCREMENT,
+                             `continent_id` INT(11) NULL DEFAULT NULL,
+                             `country_name` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+                             PRIMARY KEY (`country_id`) USING BTREE,
+                             INDEX `continent_Id` (`continent_id`) USING BTREE,
+                             CONSTRAINT `continent_Id` FOREIGN KEY (`continent_id`) REFERENCES `continents` (`continent_Id`) ON UPDATE CASCADE ON DELETE CASCADE
+);
+insert into countries VALUES(NULL, 1 ,'독일');
+SELECT * FROM countries;
+-- 게시판 SQL
+DROP TABLE IF EXISTS bbs;
+CREATE TABLE `bbs` ( 
+                       `bbs_id` INT(11) NOT NULL AUTO_INCREMENT,
+                       `title` VARCHAR(255) NOT NULL COLLATE 'utf8mb4_general_ci',
+                       `contents` VARCHAR(100) NOT NULL COLLATE 'utf8mb4_general_ci',
+                       `created_at` TIMESTAMP NULL DEFAULT current_timestamp(),
+                       `modify_at` TIMESTAMP NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+                       `view_cnt` INT(11) NULL DEFAULT '0',
+                       `like_cnt` INT(11) NULL DEFAULT '0',
+                       `hashtag_id` INT(11) NULL DEFAULT '0',
+                       `is_deleted` TINYINT(1) NULL DEFAULT '0',
+                       `member_code` INT(11) NULL DEFAULT '0',
+                       `country_id` INT(11) NULL DEFAULT '1',
+                       PRIMARY KEY (`bbs_id`) USING BTREE,
+                       INDEX `country_id` (`country_id`) USING BTREE,
+                       CONSTRAINT `country_id` FOREIGN KEY (`country_id`) REFERENCES `countries` (`country_id`) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-DROP TABLE IF EXISTS countryTBL;
-CREATE TABLE countryTBL
-(
-    countryCode INT NOT NULL PRIMARY KEY,
-    countryName VARCHAR(15) NOT NULL
+SELECT * FROM comment;  
+-- 해시태그 SQL
+CREATE TABLE `hashtag` (
+                           `hashtag_id` INT(11) NOT NULL AUTO_INCREMENT,
+                           `bbs_id` INT(11) NULL DEFAULT NULL,
+                           `content` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb3_bin',
+                           PRIMARY KEY (`hashtag_id`) USING BTREE,
+                           INDEX `bbs_id` (`bbs_id`) USING BTREE,
+                           CONSTRAINT `bbs_id` FOREIGN KEY (`bbs_id`) REFERENCES `bbs` (`bbs_id`) ON UPDATE CASCADE ON DELETE CASCADE
 );
+INSERT INTO hashtag VALUES(NULL, 13, 'sdfsadf');
+SELECT * FROM hashtag; 
+ 
+CREATE TABLE `comment` (
+	`comment_id` INT(11) NOT NULL AUTO_INCREMENT,
+	`bbs_id` INT(11) NOT NULL DEFAULT '0',
+	`content` VARCHAR(50) NOT NULL DEFAULT '0' COLLATE 'utf8mb4_general_ci',
+	`writer` VARCHAR(50) NOT NULL DEFAULT '0' COLLATE 'utf8mb4_general_ci',
+	`reg_date` TIMESTAMP NULL DEFAULT NULL,
+	`modify_date` TIMESTAMP NULL DEFAULT NULL,
+	PRIMARY KEY (`comment_id`) USING BTREE,
+	INDEX `bbs_id` (`bbs_id`) USING BTREE,
+	CONSTRAINT `bbs` FOREIGN KEY (`bbs_id`) REFERENCES `bbs` (`bbs_id`) ON UPDATE CASCADE ON DELETE CASCADE
+);
+SELECT * FROM comment;
 
-DROP TABLE IF EXISTS postTBL;
-CREATE TABLE postTBL
-(
-    postCode INT NOT NULL PRIMARY KEY,
-    memCode INT NOT NULL,
-    postName VARCHAR(15) NOT NULL,
-    postContent VARCHAR(255) NOT NULL,
-    postPicture VARCHAR(255),
-    postDate DATE NOT NULL,
-    postViews INT NOT NULL,
-    postLikes INT NOT NULL,
-    postTraveldate DATE NOT NULL,
-    countryCode INT NOT NULL,
-    CONSTRAINT FK_usersTBL_postTBL FOREIGN KEY(memCode) REFERENCES usersTBL(memCode),
-    CONSTRAINT FK_countryTBL_postTBL FOREIGN KEY(countryCode) REFERENCES countryTBL(countryCode)
-);
 
-DROP TABLE IF EXISTS commentTBL;
-CREATE TABLE commentTBL
-(
-    commentCode INT NOT NULL PRIMARY KEY,
-    memCode INT NOT NULL,
-    postCode INT NOT NULL,
-    commentPost VARCHAR(255) NOT NULL,
-    commentDate DATE NOT NULL,
-    commentLikes INT NOT NULL,
-    commentPictures VARCHAR(255),
-    
-	 CONSTRAINT FK_usersTBL_commentTBL FOREIGN KEY(memCode) REFERENCES usersTBL(memCode),
-    CONSTRAINT FK_postTBL_commentTBL FOREIGN KEY(postCode) REFERENCES postTBL(postCode)
-);
-
-DROP TABLE IF EXISTS recommentTBL;
-CREATE TABLE recommentTBL
-(
-    recommentCode INT NOT NULL PRIMARY KEY,
-    commentCode INT NOT NULL,
-	 memCode INT NOT NULL,
-    recommentPost VARCHAR(255) NOT NULL,
-    recommentDate DATE NOT NULL,
-    recommentLikes INT,
-   
-	 CONSTRAINT FK_usersTBL_recommentTBL FOREIGN KEY(memCode) REFERENCES usersTBL(memCode),
-    CONSTRAINT FK_commentTBL_recommentTBL FOREIGN KEY(commentCode) REFERENCES commentTBL(commentCode)
-);
-
-DROP TABLE IF EXISTS chatTBL;
-CREATE TABLE chatTBL
-(
-    chatCode INT NOT NULL PRIMARY KEY,
-	 memCode INT NOT NULL,
-    chatContent VARCHAR(255) NOT NULL,
-    chatNum INT NOT NULL,
-    chatRoomNum INT NOT NULL,
-    chatSender INT NOT NULL,
-    ChatRecipient INT NOT NULL,
-    chatTime DATE NOT NULL,
-    chatReadTime DATE NOT NULL,
-    chatCheck DATE NOT NULL,
-   
-	 CONSTRAINT FK_usersTBL_chatTBL FOREIGN KEY(memCode) REFERENCES usersTBL(memCode)
-);
-
-DROP TABLE IF EXISTS mypageTBL;
-CREATE TABLE mypageTBL
-(
-    myCode INT NOT NULL PRIMARY KEY,
-    memCode INT NOT NULL,
-    postCode INT NOT NULL,
-    commentCode INT NOT NULL,
-    recommentCode INT NOT NULL,
-    chatCode INT NOT NULL,
-    
-    CONSTRAINT FK_postTBL_mypageTBL FOREIGN KEY(postCode) REFERENCES postTBL(postCode),
-	 CONSTRAINT FK_usersTBL_mypageTBL FOREIGN KEY(memCode) REFERENCES usersTBL(memCode),
-    CONSTRAINT FK_commentTBL_mypageTBL FOREIGN KEY(commentCode) REFERENCES recommentTBL(commentCode),
-    CONSTRAINT FK_recommentTBL_mypageTBL FOREIGN KEY(recommentCode) REFERENCES recommentTBL(recommentCode),
-    CONSTRAINT FK_chatTBL_mypageTBL FOREIGN KEY(chatCode) REFERENCES chatTBL(chatCode)
-);
+INSERT INTO bbs (title, contents, view_cnt, like_cnt, hashtag_id, member_code, country_id)
+VALUES
+  ('유럽 여행 후기♡', '첫 번째 게시물의 내용입니다.', 50, 10, 1, 1,1),
+  ('강원도 양양 먹방 여행', '두 번째 게시물의 내용입니다.', 30, 5, 2, 12,1),
+  ('서울 근교 드라이브 여행', '세 번째 게시물의 내용입니다.', 20, 15, 1, 1,1),
+  ('부산 겨울 바다', '네 번째 게시물의 내용입니다.', 15, 7, 4, 1,1);
+  
+SELECT * FROM bbs;
