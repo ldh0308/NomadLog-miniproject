@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.encore.bbs.board.dto.CountryDto;
 import com.encore.bbs.board.dto.HashTag;
+import com.encore.bbs.chat.model.ChatRoom;
+import com.encore.bbs.chat.service.ChatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,8 +15,12 @@ import com.encore.bbs.board.mapper.BbsMapper;
 @Service
 public class BbsServiceImpl implements BbsService {
 
+
 	@Autowired
 	private BbsMapper bbsmapper;
+
+	@Autowired
+	private ChatService chatService;
 
 	@Override
 	public List<BbsDTO> selectBbsList() throws Exception {
@@ -26,7 +32,7 @@ public class BbsServiceImpl implements BbsService {
 		bbsmapper.insertBbs(bbs);
 
 		//		//게시글 저장 아이디 반환(getLatestBbsId 추가 service)
-		Long savedBbsId = bbsmapper.getLatestBbsId();
+		long savedBbsId = bbsmapper.getLatestBbsId();
 
 		// 해시태그 저장을 위한 객체 생성
 		HashTag hashTag = new HashTag();
@@ -43,6 +49,7 @@ public class BbsServiceImpl implements BbsService {
 //		countryDto.setCountryId(savedcountryBbsId);
 		//bbsmapper.selectCountryBbs(savedcountryBbsId);
 
+		chatService.createRoom(savedBbsId);
 
 	}
 

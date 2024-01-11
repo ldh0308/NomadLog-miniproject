@@ -16,11 +16,13 @@
 </head>
 <body>
 <div>
-  <button onclick="location.href=`/chat/room`">돌아가기</button>
+  <div>
+    <button onclick="goBack()">돌아가기</button>
+  </div>
+<!--  <a href="#" onclick="history.go(-1); return false;"></a>-->
 </div>
 <div class="container" id="app" v-cloak>
   <div>
-    <h2>{{room.name}}</h2>
   </div>
   <div class="input-group">
     <div class="input-group-prepend">
@@ -53,51 +55,73 @@
   var vm = new Vue({
     el: '#app',
     data: {
-      roomId: '',
+      bbsId: '',
       room: {},
       sender: '',
       message: '',
       messages: []
     },
     created() {
-      this.roomId = localStorage.getItem('wschat.roomId');
+      this.bbsId = localStorage.getItem('wschat.bbsId');
       this.sender = localStorage.getItem('wschat.sender');
       this.findRoom();
     },
     methods: {
-      findRoom: function() {
-        axios.get('/chat/room/'+this.roomId).then(response => { this.room = response.data; });
+      findRoom: function () {
+        axios.get('/chat/room/' + this.bbsId).then(response => {
+          this.room = response.data;
+        });
       },
-      sendMessage: function() {
-        ws.send("/app/chat/message", {}, JSON.stringify({type:'TALK', roomId:this.roomId, sender:this.sender, message:this.message}));
+      sendMessage: function () {
+        ws.send("/app/chat/message", {}, JSON.stringify({
+          type: 'TALK',
+          bbsId: this.bbsId,
+          sender: this.sender,
+          message: this.message
+        }));
         this.message = '';
       },
-      recvMessage: function(recv) {
-        this.messages.unshift({"type":recv.type,"sender":recv.type=='ENTER'?'[알림]':recv.sender,"message":recv.message})
-      }
+      recvMessage: function (recv) {
+        this.messages.unshift({
+          "type": recv.type,
+          "sender": recv.type == 'ENTER' ? '[알림]' : recv.sender,
+          "message": recv.message
+        })
+      },
+
+
     }
   });
 
+
   function connect() {
     // pub/sub event
-    ws.connect({}, function(frame) {
-      ws.subscribe("/topic/chat/room/"+vm.$data.roomId, function(message) {
+    ws.connect({}, function (frame) {
+      ws.subscribe("/topic/chat/room/" + vm.$data.bbsId, function (message) {
         var recv = JSON.parse(message.body);
         vm.recvMessage(recv);
       });
-      ws.send("/app/chat/message", {}, JSON.stringify({type:'ENTER', roomId:vm.$data.roomId, sender:vm.$data.sender}));
-    }, function(error) {
-      if(reconnect++ <= 5) {
-        setTimeout(function() {
+      ws.send("/app/chat/message", {}, JSON.stringify({type: 'ENTER', bbsId: vm.$data.bbsId, sender: vm.$data.sender}));
+    }, function (error) {
+      if (reconnect++ <= 5) {
+        setTimeout(function () {
           console.log("connection reconnect");
           sock = new SockJS("/ws/chat");
           ws = Stomp.over(sock);
           connect();
-        },10*1000);
+        }, 10 * 1000);
       }
     });
   }
+
   connect();
+
+  function goBack() {
+    console.log(1);
+    location.href = "/bbs/" + vm.$data.bbsId;
+  }
+
+
 </script>
 </body>
 </html>

@@ -35,7 +35,7 @@ public class MemberController {
 
 	@GetMapping("/save")
 	public String saveForm() {
-		return "save";
+		return "member/save";
 	}
 
 	@PostMapping("/save")
@@ -105,7 +105,7 @@ public class MemberController {
 	public String update(@ModelAttribute MemberDTO memberDTO) {
 		boolean updateResult = memberService.update(memberDTO);
 		if (updateResult) {
-			return "main"; //"redirect:/memebr?memberId=" + memberDTO.getMemberId()
+			return "/member/main"; //"redirect:/memebr?memberId=" + memberDTO.getMemberId()
 		} else {
 			return "index";
 		}

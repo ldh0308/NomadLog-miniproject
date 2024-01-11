@@ -34,14 +34,15 @@ public class ChatService {
     }
 
     //채팅방 하나 불러오기
-    public ChatRoom findById(String roomId) {
-        return chatRooms.get(roomId);
+    public ChatRoom findById(String bbsId) {
+        return chatRooms.get(bbsId);
     }
 
     //채팅방 생성
-    public ChatRoom createRoom(String name) {
-        ChatRoom chatRoom = ChatRoom.create(name);
-        chatRooms.put(chatRoom.getRoomId(), chatRoom);
+    public ChatRoom createRoom(Long bbsId) {
+        ChatRoom chatRoom = ChatRoom.create(bbsId);
+        chatRooms.put(String.valueOf(chatRoom.getBbsId()), chatRoom);
         return chatRoom;
     }
+
 }
