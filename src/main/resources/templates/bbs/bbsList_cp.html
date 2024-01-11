@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>NomardLog | 게시판</title>
+
+	<link th:href="@{/css/reset.css}" rel="stylesheet" />
+	<link th:href="@{/css/style.css}" rel="stylesheet" />
+	<link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css}" />
+
+	<script th:inline="javascript" type="text/javascript" th:src="@{/lib/jquery-3.6.1.min.js}"></script>
+</head>
+<body>
+<div class="container">
+	<h2></h2>
+	<table class="table table-hover">
+		<colgroup>
+			<col width="10%"/>
+			<col width="*"/>
+			<col width="15%"/>
+			<col width="20%"/>
+		</colgroup>
+		<thead>
+		<tr>
+			<th class="text-center" scope="col">글번호</th>
+			<th class="text-center" scope="col">제목</th>
+			<th class="text-center" scope="col">조회수</th>
+			<th class="text-center" scope="col">작성자</th>
+			<th class="text-center" scope="col">작성일</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr th:if="${#lists.size(list)} > 0" th:each="list : ${list}">
+			<td th:text="${list.bbsId}" class="text-center"></td>
+			<!-- 0103_상세화면 코드 추가 -->
+			<td class="title">
+				<a href="/bbs/"
+				   th:attrappend="href=${list.bbsId}"
+				   th:text="${list.title}"></a></td>
+			<!-- 0103_상세화면 코드 추가 -->
+			<td th:text="${list.viewCnt}" class="text-center"></td>
+			<td th:text="${list.memberId}" class="text-center"></td>
+			<td th:text="${#temporals.format(list.createdAt,'yyyy-MM-dd HH:mm:ss')}" class="text-center"></td>
+		</tr>
+		<tr th:unless="${#lists.size(list)} > 0">
+			<td colspan="4">조회된 결과가 없습니다.</td>
+		</tr>
+		</tbody>
+	</table>
+	<div class="btn-area mt-60 d-flex align-items-end justify-content-end">
+		<a href="/bbs/write" class="btn btn-primary">글쓰기</a>
+	</div>
+</div>
+</body>
+</html>
