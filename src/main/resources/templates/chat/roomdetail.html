@@ -94,27 +94,47 @@
   });
 
 
+  // 예시: 클라이언트에서 WebSocket 주제 동적 설정 부분
   function connect() {
-    // pub/sub event
-    ws.connect({}, function (frame) {
-      ws.subscribe("/topic/chat/room/" + vm.$data.bbsId, function (message) {
-        var recv = JSON.parse(message.body);
-        vm.recvMessage(recv);
+    // 채팅방 ID를 localStorage에서 가져오기
+    const chatRoomId = localStorage.getItem('wschat.roomId');
+
+    // 채팅방 ID가 존재하면 WebSocket 주제 설정
+    if (chatRoomId) {
+      const websocketTopic = `/topic/chat/room/${chatRoomId}`;
+      const socket = new SockJS("/ws/chat");
+      const stompClient = Stomp.over(socket);
+
+      stompClient.connect({}, frame => {
+        stompClient.subscribe(websocketTopic, function (message) {
+          var recv = JSON.parse(message.body);
+          vm.recvMessage(recv);
+        });
+
+        // 채팅방에 입장 메시지 전송 등의 추가 작업 수행 가능
+        stompClient.send("/app/chat/message", {}, JSON.stringify({type: 'ENTER', bbsId: chatRoomId, sender: vm.$data.sender}));
+      }, function (error) {
+        handleConnectionError(error);
       });
-      ws.send("/app/chat/message", {}, JSON.stringify({type: 'ENTER', bbsId: vm.$data.bbsId, sender: vm.$data.sender}));
-    }, function (error) {
-      if (reconnect++ <= 5) {
-        setTimeout(function () {
-          console.log("connection reconnect");
-          sock = new SockJS("/ws/chat");
-          ws = Stomp.over(sock);
-          connect();
-        }, 10 * 1000);
-      }
-    });
+    } else {
+      console.error('채팅방 ID가 없습니다.');
+    }
   }
 
+  function handleConnectionError(error) {
+    if (reconnect++ <= 5) {
+      setTimeout(function () {
+        console.log("connection reconnect");
+        sock = new SockJS("/ws/chat");
+        ws = Stomp.over(sock);
+        connect();
+      }, 10 * 1000);
+    }
+  }
+
+  // 초기 WebSocket 연결 설정
   connect();
+
 
   function goBack() {
     console.log(1);
