@@ -31,16 +31,21 @@ public interface CommentService {
 
     /**
      * 댓글을 수정하는 메서드
-     * @param commentId 댓글 식별자
+     *
+     * @param commentId  댓글 식별자
      * @param commentDTO 수정할 댓글 정보
+     * @return
      */
-    void updateComment(Long commentId, CommentDTO commentDTO);
+    int updateComment(Long commentId, CommentDTO commentDTO);
 
     /**
      * 댓글을 삭제하는 메서드
+     *
      * @param commentId 삭제할 댓글의 식별자
+     * @param bbsId
+     * @return
      */
-    void deleteComment(Long commentId);
+    int deleteComment(Long commentId, String bbsId);
 
     /**
      * 댓글 전체 개수를 가져오는 메서드

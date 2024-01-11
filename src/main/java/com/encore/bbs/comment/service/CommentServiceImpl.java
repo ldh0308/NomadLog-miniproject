@@ -30,19 +30,21 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     @Transactional
-    public void updateComment(Long commentId, CommentDTO commentDTO) {
+    public int updateComment(Long commentId, CommentDTO commentDTO) {
         CommentDTO existingComment = commentMapper.findCommentById(commentId);
 
         if (existingComment != null) {  // 기존댓글이 존재한다면 , dto와 db update
             commentDTO.setCommentId(commentId);
             commentMapper.updateComment(commentDTO);
         }
+        return 0;
     }
 
     @Override
     @Transactional
-    public void deleteComment(Long commentId) {
+    public int deleteComment(Long commentId, String bbsId) {
         commentMapper.deleteComment(commentId);
+        return 0;
     }
 
     @Override
