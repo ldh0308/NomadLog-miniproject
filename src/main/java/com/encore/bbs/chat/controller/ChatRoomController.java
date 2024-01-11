@@ -45,15 +45,15 @@ public class ChatRoomController {
         return chatService.createRoom(name);
     }*/
     // 채팅방 입장 화면
-    @GetMapping("/room/enter/{roomId}")
-    public String roomDetail(Model model, @PathVariable String roomId) {
-        model.addAttribute("roomId", roomId);
+    @GetMapping("/room/enter/{bbsId}")
+    public String roomDetail(Model model, @PathVariable String bbsId) {
+        model.addAttribute("bbsId", bbsId);
         return "roomdetail";
     }
     // 특정 채팅방 조회
-    @GetMapping("/room/{roomId}")
+    @GetMapping("/room/{bbsId}")
     @ResponseBody
-    public ChatRoom roomInfo(@PathVariable String roomId) {
-        return chatService.findById(roomId);
+    public ChatRoom roomInfo(@PathVariable String bbsId) {
+        return chatService.findById(bbsId);
     }
 }
