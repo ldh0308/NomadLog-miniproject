@@ -10,8 +10,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			ORDER BY bbs_id DESC
 	</select>
 	<insert id="insertBbs" parameterType="BbsDTO" useGeneratedKeys="true" keyProperty="bbsId">
-		INSERT INTO bbs(title, contents, created_at)
-		VALUES (#{title},#{contents},NOW())
+		INSERT INTO bbs(title, contents, created_at, member_code)
+		VALUES (#{title},#{contents},NOW(), #{memberCode})
 	</insert>
 	<select id="selectBbsDetail" parameterType="int" resultType="BbsDTO">
 		<!-- select * from bbs WHERE bbs_id = #{bbsId} -->

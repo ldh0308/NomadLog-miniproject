@@ -47,6 +47,10 @@
     	delete from usersTBL where member_code = #{loginId}
     </delete>
 
+    
+    <select id="selectMemberName" parameterType="member" resultType="member">
+        select member_name from usersTBL where member_code = #{loginId}
+    </select>
 </mapper>
 
 
