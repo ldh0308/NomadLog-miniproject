@@ -105,9 +105,9 @@ public class MemberController {
 	public String update(@ModelAttribute MemberDTO memberDTO) {
 		boolean updateResult = memberService.update(memberDTO);
 		if (updateResult) {
-			return "/member/main"; //"redirect:/memebr?memberId=" + memberDTO.getMemberId()
+			return "/main"; //"redirect:/memebr?memberId=" + memberDTO.getMemberId()
 		} else {
-			return "/index";
+			return "/main";
 		}
 		
 	}
