@@ -18,6 +18,7 @@ a{display:inline-block;}
 a:link, a:visited {text-decoration:none; color:#333;}
 input{vertical-align:middle;}
 input:focus {outline:0;}
+ol,ul, li{list-style: none; padding: 0;}
 caption , .hidden {display:none; width:0; height:0; margin-top:-1px; overflow:hidden; visibility:hidden; font-size:0; line-height:0;}
 .container {max-width:1024px; margin:30px auto;}
 
@@ -41,7 +42,16 @@ caption , .hidden {display:none; width:0; height:0; margin-top:-1px; overflow:hi
 
 .file_list a {display:inherit !important;}*/
 
+/* 공통 헤더 */
 
+.header-logo-area {
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.header-logo-area .logo{ width: 110px; }
 
 
 .page-wrap {
@@ -122,3 +132,9 @@ caption , .hidden {display:none; width:0; height:0; margin-top:-1px; overflow:hi
     box-shadow: inset 400px 0 0 0 #0049f8;
     transition: ease-out 0.6s;
 }
+
+.page-wrap.login .login-box {
+    max-width: 460px;
+    margin: 0 auto;
+}
+

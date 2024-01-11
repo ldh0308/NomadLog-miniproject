@@ -69,6 +69,7 @@ table {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+ol,ul, li{list-style: none; padding: 0;}
 
 Previous Versions
 v1.0 (200802)
@@ -86,4 +87,4 @@ LinkedIn
 The excuse of the day isbad karma
 All contents of this site, unless otherwise noted, are ©1993-2024 Eric A. and Kathryn S. Meyer. All Rights Reserved.
 "Thoughts From Eric" is powered by WordPress. Most of the rest of the site is hand-authored.
-The ink-sketch images used in this site’s design are adapted from Yūzan Mori’s Hamonshū, Volumes 1-3, published in 1903 and made available for public use by the Smithsonian Libraries and the Internet Archive.d
+The ink-sketch images used in this site’s design are adapted from Yūzan Mori’s Hamonshū, Volumes 1-3, published in 1903 and made available for public use by the Smithsonian Libraries and the Internet Archive.
