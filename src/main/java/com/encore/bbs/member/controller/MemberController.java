@@ -35,7 +35,7 @@ public class MemberController {
 
 	@GetMapping("/save")
 	public String saveForm() {
-		return "save";
+		return "member/save";
 	}
 
 	@PostMapping("/save")
@@ -45,16 +45,16 @@ public class MemberController {
 		// 결국 DTO에 담긴 값의 최종 목적지는 DB다. 이는 컨트롤러에서 서비스 클래스로 보내야 한다.
 		int saveResult = memberService.save(memberDTO);
 		if(saveResult > 0) {
-			return "login";
+			return "member/login";
 		} else {
-			return "save"; // 저장이 잘 돼서 리턴으로 받은 값이 0이기 때문에 else 구문 실행 후 /save url로 이동 
+			return "member/save"; // 저장이 잘 돼서 리턴으로 받은 값이 0이기 때문에 else 구문 실행 후 /save url로 이동
 		}
 		// 결과값이 Bad Request, status=400라고 나왔다면 
 	}
 
 	@GetMapping("/login")
 	public String loginForm() {
-		return "login";
+		return "/member/login";
 	}
 
 	@PostMapping("/login")
@@ -68,9 +68,9 @@ public class MemberController {
 			// 로그인이 성공한 경우, 세션에 현재 로그인한 사용자의 아이디를 저장하는 코드
 			// setAttribute 메서드는 세션에 속성(attribute)을 설정하는 메서드다. 
 			// 세션 객체에는 여러 속성을 저장할 수 있으며, 각 속성은 고유한 이름(키)을 가지게되는데 이때 "loginId"는 세션에 저장될 속성의 이름(키)이다. 
-			return "main";
+			return "member/main";
 		} else {
-			return "login";
+			return "/member/login";
 		}
 	}
 	
@@ -89,7 +89,7 @@ public class MemberController {
 	    model.addAttribute("loggedInMember", loggedInBbsDTOList); // 리스트 결과를 loggedInMemberDTOList에 담아서 mypage로 보낸다.
 //	    model2.addAttribute("loggedInComment", loggedInCommentDTOList); // 리스트 결과를 loggedInMemberDTOList에 담아서 mypage로 보낸다.
 	    
-	    return "mypage"; // 해당 정보를 출력할 페이지 이름으로 수정
+	    return "/mypage/mypage"; // 해당 정보를 출력할 페이지 이름으로 수정
 	}
 	
 	@GetMapping("/update")
@@ -105,7 +105,7 @@ public class MemberController {
 	public String update(@ModelAttribute MemberDTO memberDTO) {
 		boolean updateResult = memberService.update(memberDTO);
 		if (updateResult) {
-			return "main"; //"redirect:/memebr?memberId=" + memberDTO.getMemberId()
+			return "/member/main"; //"redirect:/memebr?memberId=" + memberDTO.getMemberId()
 		} else {
 			return "index";
 		}
@@ -138,7 +138,7 @@ public class MemberController {
         
         session.invalidate();
         
-        return "main";        
+        return "/member/main";
         
     }
 	
