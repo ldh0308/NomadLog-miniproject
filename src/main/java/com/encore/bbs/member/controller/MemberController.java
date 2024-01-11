@@ -45,9 +45,9 @@ public class MemberController {
 		// 결국 DTO에 담긴 값의 최종 목적지는 DB다. 이는 컨트롤러에서 서비스 클래스로 보내야 한다.
 		int saveResult = memberService.save(memberDTO);
 		if(saveResult > 0) {
-			return "member/login";
+			return "/member/login";
 		} else {
-			return "member/save"; // 저장이 잘 돼서 리턴으로 받은 값이 0이기 때문에 else 구문 실행 후 /save url로 이동
+			return "/member/save"; // 저장이 잘 돼서 리턴으로 받은 값이 0이기 때문에 else 구문 실행 후 /save url로 이동
 		}
 		// 결과값이 Bad Request, status=400라고 나왔다면 
 	}
@@ -68,7 +68,7 @@ public class MemberController {
 			// 로그인이 성공한 경우, 세션에 현재 로그인한 사용자의 아이디를 저장하는 코드
 			// setAttribute 메서드는 세션에 속성(attribute)을 설정하는 메서드다. 
 			// 세션 객체에는 여러 속성을 저장할 수 있으며, 각 속성은 고유한 이름(키)을 가지게되는데 이때 "loginId"는 세션에 저장될 속성의 이름(키)이다. 
-			return "member/main";
+			return "/member/main";
 		} else {
 			return "/member/login";
 		}

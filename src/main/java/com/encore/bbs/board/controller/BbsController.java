@@ -42,7 +42,7 @@ public class BbsController {
 
 		Integer loginId = (Integer) session.getAttribute("loginId");
 		if(loginId == null) {
-			return "member/login";
+			return "/member/login";
 		}else {
 			return "/bbs/bbsWrite";
 		}
