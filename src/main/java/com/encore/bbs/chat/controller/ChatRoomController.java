@@ -30,7 +30,7 @@ public class ChatRoomController {
     public String rooms(Model model, HttpSession session) {
     	Integer loginId = (Integer)session.getAttribute("loginId");
     	model.addAttribute("loginId", loginId);
-        return "room";
+        return "/chat/room";
     }
     // 모든 채팅방 목록 반환
     @GetMapping("/rooms")

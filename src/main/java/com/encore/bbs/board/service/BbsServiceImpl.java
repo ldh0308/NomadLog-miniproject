@@ -18,6 +18,8 @@ public class BbsServiceImpl implements BbsService {
 
 	@Autowired
 	private BbsMapper bbsmapper;
+
+	@Autowired
 	private ChatService chatService;
 
 	@Override

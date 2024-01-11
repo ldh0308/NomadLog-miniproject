@@ -25,7 +25,7 @@
         </div>
         <input type="text" class="form-control" v-model="room_name" v-on:keyup.enter="createRoom">
         <div class="input-group-append">
-            <button class="btn btn-primary" type="button" @click="createRoom">채팅방 개설</button>
+           <!-- <button class="btn btn-primary" type="button" @click="createRoom">채팅방 개설</button>-->
         </div>
     </div>
     <ul class="list-group">
@@ -53,7 +53,7 @@
             findAllRoom: function() {
                 axios.get('/chat/rooms').then(response => { this.chatrooms = response.data; });
             },
-            createRoom: function() {
+            /*createRoom: function() {
                 if("" === this.room_name) {
                     alert("방 제목을 입력해 주십시요.");
                     return;
@@ -70,7 +70,7 @@
                         )
                         .catch( response => { alert("채팅방 개설에 실패하였습니다."); } );
                 }
-            },
+            },*/
             enterRoom: function(roomId) {
                 if(loginId != null) {
                     localStorage.setItem('wschat.sender',loginId);
