@@ -17,7 +17,7 @@
 <body>
 <div>
     <div>
-       <!-- <button onclick="goBack()">돌아가기</button>-->
+        <button onclick="goBack()">돌아가기</button>
     </div>
     <!--  <a href="#" onclick="history.go(-1); return false;"></a>-->
 </div>
@@ -128,6 +128,9 @@
             console.error('채팅방 ID가 없습니다.');
         }
     }
+    function goBack() {
+        history.back();
+    }
 
     function handleConnectionError(error) {
         if (reconnect++ <= 5) {
@@ -144,10 +147,10 @@
     connect();
 
 
-/*    function goBack() {
-        console.log(1);
-        location.href = "/bbs/" + vm.$data.bbsId;
-    }*/
+    /*    function goBack() {
+            console.log(1);
+            location.href = "/bbs/" + vm.$data.bbsId;
+        }*/
 
 
 </script>
