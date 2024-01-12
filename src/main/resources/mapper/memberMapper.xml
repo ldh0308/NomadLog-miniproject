@@ -17,6 +17,10 @@
     </select>
     <!-- 끌고 오는게 안되는 이유는 데이터 베이스에서 스네이크케이스라 그렇다. -->
 
+	<select id="findAllCode" parameterType="Integer" resultType="member">  
+    	select * from usersTBL where member_code = #{loginId}
+    </select>
+
 	<select id="code" parameterType="member" resultType="int">  
     	select member_code from usersTBL where member_id = #{memberId} and member_password = #{memberPassword}
     </select>

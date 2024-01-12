@@ -7,6 +7,8 @@ import org.springframework.messaging.simp.SimpMessageSendingOperations;
 import org.springframework.stereotype.Controller;
 
 import com.encore.bbs.chat.model.ChatMessage;
+import org.springframework.web.bind.annotation.RestController;
+
 
 @RequiredArgsConstructor
 @Controller

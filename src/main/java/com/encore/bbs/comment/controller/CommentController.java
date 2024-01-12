@@ -28,24 +28,11 @@ public class CommentController {
     }
 
 
-    // 수정
-    @PostMapping("/update/{commentId}")
-    @ResponseBody // http
-    public ResponseEntity<String> updateComment(@PathVariable Long commentId, @RequestBody CommentDTO commentDTO) {
-        try {
-            commentService.updateComment(commentId, commentDTO);
-            return new ResponseEntity<>("수정완료", HttpStatus.OK);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return new ResponseEntity<>("수정에러", HttpStatus.BAD_REQUEST);
-        }
-    }
-
     // 삭제
-    @PostMapping("/delete/{bbsId}")
-    public String deleteComment(@RequestParam("commentId") Long commentId) {
+    @PostMapping("delete")
+    public String deleteComment(@RequestParam("commentId") long commentId, @RequestParam("bbsId") String bbsId) {
         commentService.deleteComment(commentId);
         // 댓글 삭제 후, 해당 게시글의 상세 페이지로 이동
-        return "redirect:/bbs/{bbsId}";
+        return "redirect:/bbs/" + bbsId;
     }
 }

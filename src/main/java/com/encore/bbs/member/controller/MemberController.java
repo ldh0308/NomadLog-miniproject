@@ -98,7 +98,7 @@ public class MemberController {
 		int loginId = (int)session.getAttribute("loginId"); // session.getAttribute으로 얻는 값은 Object 타입이므로 스트링으로 변환 필요
 		MemberDTO memberDTO = memberService.findByIdInfo(loginId);
 		model.addAttribute("info",memberDTO);
-		return "update";
+		return "/member/update";
 	}
 	
 	@PostMapping("/update")

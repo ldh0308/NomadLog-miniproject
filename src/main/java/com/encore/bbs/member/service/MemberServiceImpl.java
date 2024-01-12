@@ -75,7 +75,11 @@ public class MemberServiceImpl implements MemberService {
 	public void delete(int loginId) {
 		memberMapper.deleteMember(loginId);
 	}
-
+	
+	@Override
+	public MemberDTO findAllCode(Integer loginId) {
+		return memberMapper.findAllCode(loginId);
+	}
 
 
 }
