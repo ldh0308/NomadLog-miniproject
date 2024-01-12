@@ -83,9 +83,7 @@
 	<a href="#this" id="list" class="btn">목록으로</a>
 	<a href="#this" id="edit" class="btn" th:if="${bbs != null and bbs.memberCode == loginId}">수정</a>
 	<a href="#this" id="delete" class="btn" th:if="${bbs != null and bbs.memberCode == loginId}">삭제</a>
-	<a href="#this" id="chatButton" class="btn" th:attr="data-roomId=${bbs.bbsId}" th:onclick="enterChatRoom(this.getAttribute('data-roomId'))">채팅하기</a>
-
-
+	<a href="#this" id="chatButton" class="btn" th:attr="data-bbsId=${bbs.bbsId}" th:onclick="enterChatRoom(this.getAttribute('data-bbsId'))">채팅하기</a>
 
 	<!-- 댓글 작성 폼 -->
 			<div id="comment-write">
@@ -109,12 +107,12 @@
 			</div>
 </div>
 <script th:inline="javascript">
-	var loginId = [[${loginId}]];
+	var loginId = [[${loginId}]]; // Make sure to replace 'null' with the actual loginId
 	function enterChatRoom(bbsId) {
+		console.log("Debug: bbsId =", bbsId);
 		if(loginId != null) {
-			var member = [[${member}]];
-			localStorage.setItem('wschat.sender', member);
-			localStorage.setItem('wschat.roomId',bbsId);
+			localStorage.setItem('wschat.sender',loginId);
+			localStorage.setItem('wschat.bbsId',bbsId);
 			location.href="/chat/room/enter/"+bbsId;
 		} else{
 			location.href="/member/login"

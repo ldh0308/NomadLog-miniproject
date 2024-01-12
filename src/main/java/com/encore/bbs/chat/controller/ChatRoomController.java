@@ -23,8 +23,8 @@ public class ChatRoomController {
     // 채팅 리스트 화면
     @GetMapping("/room")
     public String rooms(Model model, HttpSession session) {
-    	Integer loginId = (Integer)session.getAttribute("loginId");
-    	model.addAttribute("loginId", loginId);
+        Integer loginId = (Integer)session.getAttribute("loginId");
+        model.addAttribute("loginId", loginId);
         return "/member/login";
     }
     // 모든 채팅방 목록 반환
@@ -34,7 +34,7 @@ public class ChatRoomController {
         return chatService.findAllRoom();
     }
     // 채팅방 생성
-  /*  @PostMapping("/room")*/
+    /*  @PostMapping("/room")*/
  /*   @ResponseBody
     public ChatRoom createRoom(@RequestParam String name) {
         return chatService.createRoom(name);
