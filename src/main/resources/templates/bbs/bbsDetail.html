@@ -65,15 +65,20 @@
 				<a href="#this" id="chatButton" class="btn btn-danger" th:attr="data-bbsId=${bbs.bbsId}" th:onclick="enterChatRoom(this.getAttribute('data-bbsId'))">채팅하기</a>
 			</div>
 
-			<div id="comment-Delete">
+			<div id="comment-Delete" class="mt-6">
 				<form id="deleteCommentsForm" action="/comment/delete" method="post">
 					<input type="hidden" name="bbsId" id="bbsId" th:value="${bbs.bbsId.toString()}">
-
-					<table>
+					<p class="h5">댓글</p>
+					<table class="table table-striped">
+						<colgroup>
+							<col style="width: 15%">
+							<col style="width: *%">
+							<col style="width: 15%">
+						</colgroup>
 						<tbody>
 							<tr th:each="comment : ${comments}">
-								<td th:text="${comment.writer}"></td>
-								<td th:text="${comment.content}"></td>
+								<td th:text="${comment.writer}" class="writer"></td>
+								<td th:text="${comment.content}" class="comment-content"></td>
 								<td>
 									<button type="submit" name="commentId" class="btn-outline-secondary" th:value="${comment.commentId}"
 											th:if="${memberId != null and memberId.memberId == comment.writer}">삭제</button>
