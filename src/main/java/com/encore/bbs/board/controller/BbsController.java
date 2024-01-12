@@ -19,6 +19,7 @@ import jakarta.servlet.http.HttpSession;
 
 @Controller
 @RequiredArgsConstructor
+
 public class BbsController {
 
 	@Autowired
