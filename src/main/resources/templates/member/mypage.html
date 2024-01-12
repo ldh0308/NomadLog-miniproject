@@ -16,7 +16,6 @@
             </tr>
         </thead>
         <tbody>
-            <!-- Thymeleaf syntax for iteration -->
             <tr th:each="BbsDTO : ${loggedInMember}">
                 <td th:text="${BbsDTO.title}"></td>
                 <td th:text="${BbsDTO.createdAt}"></td>
@@ -24,22 +23,6 @@
                 <td th:text="${BbsDTO.likeCnt}"></td>
             </tr>
         </tbody> 
-        
-	<!-- </table>
-    
-        <table class="table">
-        <thead>
-            <tr id="sector">
-                <th scope="col">내용</th>
-                <th scope="col">좋아요 수</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="CommentDTO : ${loggedInComment}">
-                <td th:text="${CommentDTO.content}"></td>
-                <td th:text="${CommentDTO.likenum}"></td>
-            </tr>
-        </tbody> -->
     </table>
     
     <a href="/member/update">내 정보 수정하기</a>
