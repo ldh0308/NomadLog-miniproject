@@ -22,6 +22,8 @@ public interface BbsMapper {
 
 	void deleteBbs(int bbsId) throws Exception;
 
+    BbsDTO updatedeleteBbs(int bbsId) throws Exception;
+
 	void insertHashtag(HashTag hashTag)throws Exception;
 
 	Long getLatestBbsId();
@@ -33,4 +35,6 @@ public interface BbsMapper {
 	void insertCountry(BbsDTO bbs) throws Exception; //국가저장 메서드
 
 	List<CountryDto> findCountryById(int bbsId);
+
+    int selectId(int bbsId);
 }

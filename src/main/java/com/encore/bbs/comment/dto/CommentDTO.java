@@ -16,5 +16,5 @@ public class CommentDTO {
    private String writer; // 작성자
    private LocalDateTime regDate; // 작성일
    private LocalDateTime modifyDate; // 수정일
-}
 
+}

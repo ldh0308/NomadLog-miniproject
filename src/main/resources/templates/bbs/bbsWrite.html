@@ -38,6 +38,7 @@
 				</table>
 
 				<div class="d-grid gap-2 mt-5">
+                    <span th:if="${memberDTO != null}" th:text="${memberDTO.memberCode}"></span>
                     <input type="hidden" id="memberCode" name="memberCode" th:value="${memberDTO.memberCode}">
 					<input type="submit" id="submit" value="저장" class="btn btn-primary">
 				</div>
@@ -45,10 +46,10 @@
 		</div>
 	</div>
 </th:block>
-<th:block layout:fragment="script">
+<!--<th:block layout:fragment="script">
 	<script th:inline="javascript">
 		// 스크립트 내용
 	</script>
-</th:block>
+</th:block>-->
 </body>
 </html>

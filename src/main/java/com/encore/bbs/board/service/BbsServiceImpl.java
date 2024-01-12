@@ -66,6 +66,13 @@ public class BbsServiceImpl implements BbsService {
 	}
 
 	@Override
+	public BbsDTO updatedeleteBbs(int bbsId) throws Exception {
+		BbsDTO bbs = bbsmapper.updatedeleteBbs(bbsId);
+		return bbs;
+	}
+
+
+	@Override
 	public void deleteBbs(int bbsId) throws Exception {
 		bbsmapper.deleteBbs(bbsId);
 
@@ -96,4 +103,8 @@ public class BbsServiceImpl implements BbsService {
 		return bbsmapper.findCountryById(bbsId);
 	}
 
+    @Override
+    public int selectId(int bbsId) {
+        return bbsmapper.selectId(bbsId);
+    }
 }

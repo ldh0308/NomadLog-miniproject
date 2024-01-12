@@ -12,12 +12,13 @@
 	<typeAliases>
 		<typeAlias type="com.encore.bbs.member.dto.MemberDTO"
 			alias="member"></typeAlias>
-		<typeAlias type="com.encore.bbs.member.dto.CommentDTO"
-			alias="comment"></typeAlias>
 		<typeAlias type="com.encore.bbs.board.dto.BbsDTO"
 			alias="bbsDto"></typeAlias>
 	</typeAliases>
 
+<!-- <typeHandlers>
+    <typeHandler handler="org.apache.ibatis.type.StringTypeHandler" />
+</typeHandlers> -->
 
 
 </configuration>

@@ -28,15 +28,9 @@
 	<select id="findId" parameterType="member" resultType="member">  
     	select * from usersTBL where member_id = #{memberId}
     </select>
-	
-
 
 	<select id="findByIdBbs" parameterType="bbsDto" resultType="bbsDto"> 
     	select title, created_at, view_cnt, like_cnt from bbs where member_code = #{loginId}
-    </select>
-	
-	<select id="findByIdComment" parameterType="comment" resultType="comment"> 
-    	select content, likenum from comment where member_code = #{loginId}
     </select>
     
     <select id="findByInfo" parameterType="member" resultType="member">

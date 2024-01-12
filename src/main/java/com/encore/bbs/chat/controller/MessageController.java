@@ -18,6 +18,7 @@ public class MessageController {
 
     @MessageMapping("/chat/message")
     public void message(ChatMessage message) {
+        System.out.println(message);
         if (ChatMessage.MessageType.ENTER.equals(message.getType()))
             message.setMessage(message.getSender() + "님이 입장하셨습니다.");
         messagingTemplate.convertAndSend("/topic/chat/room/"+message.getBbsId(),message);
