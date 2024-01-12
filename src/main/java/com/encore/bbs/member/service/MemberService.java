@@ -17,4 +17,6 @@ public interface MemberService {
 	String idCheck(String memberId);
 	void delete(int loginId);
 	int code(MemberDTO memberDTO);
+	// 수정사항
+	MemberDTO findAllCode(Integer loginId);
 }

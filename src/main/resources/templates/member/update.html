@@ -16,27 +16,27 @@
             </div>
 
             <form th:action="@{/member/update}" method="post" th:object="${info}" name="updateForm"/>
-                <ul>
-                    <li class="mb-3">
-                        id: <input type="text" th:field="*{memberId}" readonly="readonly"/>
-                    </li>
-                    <li class="mb-3">
-                        email: <input type="text" th:field="*{memberEmail}" />
-                    </li>
-                    <li class="mb-3">
-                        password: <input type="password" id="memberPassword"/>
-                    </li>
-                    <li class="mb-3">
-                        name: <input type="text" th:field="*{memberName}" readonly="readonly"/>
-                    </li>
-                    <li class="mb-3">
-                        age: <input type="text" th:field="*{memberAge}"/>
-                    </li>
-                </ul>
+            <ul>
+                <li class="mb-3">
+                    id: <input type="text" th:field="*{memberId}" readonly="readonly"/>
+                </li>
+                <li class="mb-3">
+                    email: <input type="text" th:field="*{memberEmail}" />
+                </li>
+                <li class="mb-3">
+                    password: <input type="password" id="memberPassword"/>
+                </li>
+                <li class="mb-3">
+                    name: <input type="text" th:field="*{memberName}" readonly="readonly"/>
+                </li>
+                <li class="mb-3">
+                    age: <input type="text" th:field="*{memberAge}"/>
+                </li>
+            </ul>
 
-                <div class="d-grid gap-2 mt-5">
-                    <input type="button" value="수정완료" onclick="update()"/>
-                </div>
+            <div class="d-grid gap-2 mt-5">
+                <input type="button" value="수정완료" onclick="update()"/>
+            </div>
             </form>
         </div>
     </div>

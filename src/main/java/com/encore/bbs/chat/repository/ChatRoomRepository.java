@@ -11,7 +11,7 @@ public class ChatRoomRepository {
 
 
 
-    private Map<String, ChatRoom> chatRoomMap;
+    private Map<Long, ChatRoom> chatRoomMap;
 
     @PostConstruct
     private void init() {
@@ -25,13 +25,13 @@ public class ChatRoomRepository {
         return chatRooms;
     }
 
-    public ChatRoom findRoomById(String id) {
+    public ChatRoom findRoomById(Long id) {
         return chatRoomMap.get(id);
     }
 
     public ChatRoom createChatRoom(Long bbsId) {
         ChatRoom chatRoom = ChatRoom.create(bbsId);
-        chatRoomMap.put(chatRoom.getRoomId(), chatRoom);
+        chatRoomMap.put((chatRoom.getBbsId()), chatRoom);
         return chatRoom;
     }
 }

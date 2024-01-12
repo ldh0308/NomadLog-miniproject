@@ -12,8 +12,8 @@
 		ORDER BY bbs_id DESC
 	</select>
 	<insert id="insertBbs" parameterType="BbsDTO" useGeneratedKeys="true" keyProperty="bbsId">
-		INSERT INTO bbs(title, contents, created_at, country_id)
-		VALUES (#{title},#{contents},NOW(), #{countryId})
+		INSERT INTO bbs(title, contents, created_at, country_id, member_code)
+		VALUES (#{title},#{contents},NOW(), #{countryId}, #{memberCode})
 	</insert>
 	<select id="selectBbsDetail" parameterType="int" resultType="BbsDTO">
 		<!-- select * from bbs WHERE bbs_id = #{bbsId} -->
