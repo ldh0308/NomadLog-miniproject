@@ -1,29 +1,60 @@
-w html>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{common/layout/defaultLayout}">
 <head>
-    <meta charset="UTF-8">
-    <title>update</title>
+    <th:block layout:fragment="title">
+        <title>NomardLog | 내정보수정</title>
+    </th:block>
 </head>
+
 <body>
-    <form th:action="@{/member/update}" method="post" th:object="${info}" name="updateForm">
-        id: <input type="text" th:field="*{memberId}" readonly="readonly">
-        email: <input type="text" th:field="*{memberEmail}" >
-        password: <input type="text" id="memberPassword">
-        name: <input type="text" th:field="*{memberName}" readonly="readonly">
-        age: <input type="text" th:field="*{memberAge}">
-        <input type="button" value="수정" onclick="update()">
-    </form>
+<th:block layout:fragment="content">
+    <div class="page-wrap memberupdate">
+        <div class="container">
+            <div class="main-title-area">
+                <h2 class="main-title">내정보수정</h2>
+                <p class="sub-title">개인정보를 업데이트 하세요.</p>
+            </div>
+
+            <form th:action="@{/member/update}" method="post" th:object="${info}" name="updateForm"/>
+                <ul>
+                    <li class="mb-3">
+                        id: <input type="text" th:field="*{memberId}" readonly="readonly"/>
+                    </li>
+                    <li class="mb-3">
+                        email: <input type="text" th:field="*{memberEmail}" />
+                    </li>
+                    <li class="mb-3">
+                        password: <input type="password" id="memberPassword"/>
+                    </li>
+                    <li class="mb-3">
+                        name: <input type="text" th:field="*{memberName}" readonly="readonly"/>
+                    </li>
+                    <li class="mb-3">
+                        age: <input type="text" th:field="*{memberAge}"/>
+                    </li>
+                </ul>
+
+                <div class="d-grid gap-2 mt-5">
+                    <input type="button" value="수정완료" onclick="update()"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</th:block>
+
+<th:block layout:fragment="script">
+    <script th:inline="javascript">
+        const update = () => {
+         const passwordDB = /*[[${info.memberPassword}]]*/ '';
+         const password = document.getElementById("memberPassword").value;
+         if (passwordDB == password) {
+             document.updateForm.submit();
+         } else {
+             alert("비밀번호가 일치하지 않습니다!");
+         }
+     }
+    </script>
+</th:block>
 </body>
-	<script th:inline="javascript">
-	    const update = () => {
-	        const passwordDB = /*[[${info.memberPassword}]]*/ '';
-	        const password = document.getElementById("memberPassword").value;
-	        if (passwordDB == password) {
-	            document.updateForm.submit();
-	        } else {
-	            alert("비밀번호가 일치하지 않습니다!");
-	        }
-	    }
-	</script>
 
 </html>
