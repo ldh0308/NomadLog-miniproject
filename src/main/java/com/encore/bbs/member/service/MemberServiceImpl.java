@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.encore.bbs.board.dto.BbsDTO;
-import com.encore.bbs.member.dto.CommentDTO;
 import com.encore.bbs.member.dto.MemberDTO;
 import com.encore.bbs.member.mapper.MemberMapper;
 
@@ -40,10 +39,7 @@ public class MemberServiceImpl implements MemberService {
 		return memberMapper.findByIdBbs(loginId);
 	}
 
-	@Override
-	public List<CommentDTO> findByIdComment(String loginId) {
-		return memberMapper.findByIdComment(loginId);
-	}
+
 
 	@Override
 	public MemberDTO findByIdInfo(int loginId) {
