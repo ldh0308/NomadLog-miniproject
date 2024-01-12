@@ -68,7 +68,7 @@ public class MemberController {
 			// 로그인이 성공한 경우, 세션에 현재 로그인한 사용자의 아이디를 저장하는 코드
 			// setAttribute 메서드는 세션에 속성(attribute)을 설정하는 메서드다. 
 			// 세션 객체에는 여러 속성을 저장할 수 있으며, 각 속성은 고유한 이름(키)을 가지게되는데 이때 "loginId"는 세션에 저장될 속성의 이름(키)이다. 
-			return "/member/main";
+			return "main";
 		} else {
 			return "/member/login";
 		}
