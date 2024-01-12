@@ -1,90 +1,153 @@
-meyerweb.com
-Main content
-Navigation links
-Footer
-Post Archives
-CSS Work
-Toolbox
-Writing
-Speaking
-Other Stuff
-About this site
-CSS Tools: Reset CSS
-The goal of a reset stylesheet is to reduce browser inconsistencies in things like default line heights, margins and font sizes of headings, and so on. The general reasoning behind this was discussed in a May 2007 post, if you're interested. Reset styles quite often appear in CSS frameworks, and the original "meyerweb reset" found its way into Blueprint, among others.
+@charset "UTF-8";
 
-The reset styles given here are intentionally very generic. There isn't any default color or background set for the body element, for example. I don't particularly recommend that you just use this in its unaltered state in your own projects. It should be tweaked, edited, extended, and otherwise tuned to match your specific reset baseline. Fill in your preferred colors for the page, links, and so on.
-
-In other words, this is a starting point, not a self-contained black box of no-touchiness.
-
-If you want to use my reset styles, then feel free! It's all explicitly in the public domain (I have to formally say that or else people ask me about licensing). You can grab a copy of the file to use and tweak as fits you best. If you're more of the copy-and-paste type, or just want an in-page preview of what you'll be getting, here it is.
-
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
+html{overflow:scorll;background:#f8f8f8;}
+html, body, div, h1, h2, a, form, table, caption, thead, tbody, tr, th, td, submit {
+	margin:0; outline:0; border:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent;
 }
 body {
-	line-height: 1;
+	font-size:0.875em; line-height:1.5; color:#333; -webkit-text-size-adjust:none; min-width:320px;
+	font-family: 'Noto Sans KR', sans-serif;font-weight:normal;
 }
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
+h1, h2, h3 {font-size: 1.5em;}
+p{margin:0; padding:0;}
+ul{margin:0;}
+a{display:inline-block;}
+a:link, a:visited {text-decoration:none; color:#333;}
+input{vertical-align:middle;}
+input:focus {outline:0;}
 ol,ul, li{list-style: none; padding: 0;}
+caption , .hidden {display:none; width:0; height:0; margin-top:-1px; overflow:hidden; visibility:hidden; font-size:0; line-height:0;}
+.container {max-width:1024px; margin:30px auto;}
 
-Previous Versions
-v1.0 (200802)
-Acknowledgments
-Thanks to Paul Chaplin for the blockquote / q rules.
+/* */
+.header-logo-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0;
+}
 
-Identity Archipelago
-Twitter
-Mastodon
-GitHub
-Flickr
-Dribbble
-Facebook
-LinkedIn
-The excuse of the day isbad karma
-All contents of this site, unless otherwise noted, are ©1993-2024 Eric A. and Kathryn S. Meyer. All Rights Reserved.
-"Thoughts From Eric" is powered by WordPress. Most of the rest of the site is hand-authored.
-The ink-sketch images used in this site’s design are adapted from Yūzan Mori’s Hamonshū, Volumes 1-3, published in 1903 and made available for public use by the Smithsonian Libraries and the Internet Archive.
+.header-logo-area .logo {
+    width: 110px;
+}
+
+.main-title-area {
+    margin: 40px 0;
+}
+
+.main-title-area .main-title {
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+.main-title-area .sub-title {
+    font-weight: 200;
+    font-size: 18px;
+}
+
+/**/
+
+.page-wrap {
+    background: #fff;
+}
+.page-wrap.index {
+    max-width: 1200px;
+    height: 100vh;
+}
+.page-wrap.index .logo {
+    width: 210px;
+}
+.page-wrap.index {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.page-wrap.index > div {
+    height: 100vh;
+}
+.page-wrap.index .left-area {
+    overflow: hidden;
+    width: 670px;
+}
+.page-wrap.index .left-area .img-box {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../images/main/main_img02.jpg");
+}
+.page-wrap.index .left-area .img-box.bg01 {
+    background-image: url("../images/main/main_img01.jpg");
+}
+.page-wrap.index .left-area .img-box.bg02 {
+    background-image: url("../images/main/main_img02.jpg");
+}
+.page-wrap.index .left-area .img-box.bg03 {
+    background-image: url("../images/main/main_img03.jpg");
+}
+.page-wrap.index .left-area .img-box.bg04 {
+    background-image: url("../images/main/main_img04.jpg");
+}
+.page-wrap.index .left-area .img-box.bg05 {
+    background-image: url("../images/main/main_img05.jpg");
+}
+.page-wrap.index .left-area .img-box.bg06 {
+    background-image: url("../images/main/main_img06.jpg");
+}
+
+.page-wrap.index .right-area {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.page-wrap.index .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.page-wrap.index .header-btm {
+    margin: 80px 0;
+}
+.page-wrap.index .main-title {
+    padding: 0 30px;
+    font-weight: 200;
+    line-height: 1.8;
+}
+.page-wrap.index .btn-area {
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-wrap.index .btn-area .btn {
+    border: 1px solid #0049f8;
+    box-shadow: inset 0 0 0 0 #0049f8;
+    margin: 0 30px;
+    color: #0049f8;
+    border-radius: 0;
+    padding: 10px 15px;
+    width: 130px;
+}
+.page-wrap.index .btn-area .btn:hover {
+    color: #fff;
+    box-shadow: inset 400px 0 0 0 #0049f8;
+    transition: ease-out 0.6s;
+}
+
+.page-wrap.login .login-box {
+    max-width: 460px;
+    margin: 0 auto;
+}
+
+.page-wrap.login {
+    width: 980px;
+    margin: 0 auto;
+}
+.page-wrap.join {
+    width: 800px;
+    margin: 0 auto;
+}
