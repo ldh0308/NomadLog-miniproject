@@ -111,7 +111,8 @@
 	function enterChatRoom(bbsId) {
 		console.log("Debug: bbsId =", bbsId);
 		if(loginId != null) {
-			localStorage.setItem('wschat.sender',loginId);
+			var member = [[${member}]];
+			localStorage.setItem('wschat.sender',member);
 			localStorage.setItem('wschat.bbsId',bbsId);
 			location.href="/chat/room/enter/"+bbsId;
 		} else{
