@@ -16,7 +16,7 @@ import java.util.*;
 @RequiredArgsConstructor
 public class ChatService {
 
-    private Map<String, ChatRoom> chatRooms;
+    private Map<Long, ChatRoom> chatRooms;
 
     @PostConstruct
     //의존관게 주입완료되면 실행되는 코드
@@ -41,7 +41,7 @@ public class ChatService {
     //채팅방 생성
     public ChatRoom createRoom(Long bbsId) {
         ChatRoom chatRoom = ChatRoom.create(bbsId);
-        chatRooms.put(String.valueOf(chatRoom.getBbsId()), chatRoom);
+        chatRooms.put(chatRoom.getBbsId(), chatRoom);
         return chatRoom;
     }
 
