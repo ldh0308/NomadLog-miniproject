@@ -10,10 +10,10 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CommentDTO {
-    private Long commentId; // 댓글 식별자
-    private Long bbsId; // 게시물 번호
-    private String content; // 댓글 내용
-    private String writer; // 작성자
-    private LocalDateTime regDate; // 작성일
-    private LocalDateTime modifyDate; // 수정일
+   private Long commentId; // 댓글 식별자
+   private int bbsId; // 게시물 번호
+   private String content; // 댓글 내용
+   private String writer; // 작성자
+   private LocalDateTime regDate; // 작성일
+   private LocalDateTime modifyDate; // 수정일
 }

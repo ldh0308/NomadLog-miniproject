@@ -12,13 +12,13 @@ import java.util.UUID;
 public class ChatRoom {
 
     private String roomId;
-    private String roomName;
+    private Long bbsId;
 
 
-    public static ChatRoom create(String name) {
+    public static ChatRoom create(Long bbsId) {
         ChatRoom room = new ChatRoom();
         room.roomId = UUID.randomUUID().toString();
-        room.roomName = name;
+        room.bbsId=bbsId;
         return room;
     }
 }

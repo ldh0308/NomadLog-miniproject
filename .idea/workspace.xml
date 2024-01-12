@@ -5,14 +5,152 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a4ecae7-5660-40a3-87f4-426ac80bd482" name="Changes" comment="Refactor : 폴더 업데이트">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/java/com/encore/bbs/BbsApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/java/com/encore/bbs/board/controller/BbsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/java/com/encore/bbs/board/dto/BbsDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/java/com/encore/bbs/board/dto/CountryDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/java/com/encore/bbs/board/dto/HashTag.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/java/com/encore/bbs/board/mapper/BbsMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/java/com/encore/bbs/board/service/BbsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/java/com/encore/bbs/board/service/BbsServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/java/com/encore/bbs/chat/config/ChatConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/java/com/encore/bbs/chat/controller/ChatRoomController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/java/com/encore/bbs/chat/controller/MessageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/java/com/encore/bbs/chat/model/ChatMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/java/com/encore/bbs/chat/model/ChatRoom.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/java/com/encore/bbs/chat/repository/ChatRoomRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/java/com/encore/bbs/chat/service/ChatService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/java/com/encore/bbs/comment/controller/CommentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/java/com/encore/bbs/comment/dto/CommentDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/java/com/encore/bbs/comment/mapper/CommentMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/java/com/encore/bbs/comment/service/CommentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/java/com/encore/bbs/comment/service/CommentServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/java/com/encore/bbs/member/controller/HomeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/java/com/encore/bbs/member/controller/MemberController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/java/com/encore/bbs/member/dto/CommentDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/java/com/encore/bbs/member/dto/MemberDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/java/com/encore/bbs/member/handler/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/java/com/encore/bbs/member/mapper/MemberMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/java/com/encore/bbs/member/service/MemberService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/java/com/encore/bbs/member/service/MemberServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/resources/mapper/CommentMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/resources/mapper/memberMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/resources/mapper/sql-bbs-mapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/resources/mybatis-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/resources/static/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/resources/static/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/resources/static/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/resources/static/js/jquery-3.6.0.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/jquery-3.6.0.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/resources/templates/bbs/bbsDetail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/resources/templates/bbs/bbsEditDelete.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bbs/bbsEditDelete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/resources/templates/bbs/bbsList.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/resources/templates/bbs/bbsWrite.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/resources/templates/chat/room.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/chat/room.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/resources/templates/chat/roomdetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/chat/roomdetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/resources/templates/fragments/body.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/body.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/resources/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/resources/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/resources/templates/layout/basic.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layout/basic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/resources/templates/member/deleteForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/member/deleteForm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/resources/templates/member/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/member/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/resources/templates/member/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/member/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/resources/templates/member/save.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/member/save.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/resources/templates/mypage/mypage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/mypage/mypage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/main/resources/templates/mypage/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/mypage/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_Team_Project_bbs_COPY/src/test/java/com/encore/bbs/ATeamProjectBbs0110ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/encore/bbs/ATeamProjectBbs0110ApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/BbsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/BbsApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/board/controller/BbsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/board/controller/BbsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/board/dto/BbsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/board/dto/BbsDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/board/dto/CountryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/board/dto/CountryDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/board/dto/HashTag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/board/dto/HashTag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/board/mapper/BbsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/board/mapper/BbsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/board/service/BbsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/board/service/BbsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/board/service/BbsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/board/service/BbsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/chat/controller/ChatRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/chat/controller/ChatRoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/chat/controller/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/chat/controller/MessageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/chat/model/ChatMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/chat/model/ChatMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/chat/model/ChatRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/chat/model/ChatRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/chat/repository/ChatRoomRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/chat/repository/ChatRoomRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/chat/service/ChatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/chat/service/ChatService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/comment/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/comment/controller/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/comment/dto/CommentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/comment/dto/CommentDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/comment/mapper/CommentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/comment/mapper/CommentMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/comment/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/comment/service/CommentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/comment/service/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/comment/service/CommentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/member/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/member/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/member/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/member/controller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/member/mapper/MemberMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/member/mapper/MemberMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/member/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/member/service/MemberService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/encore/bbs/member/service/MemberServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/encore/bbs/member/service/MemberServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CommentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bbsDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bbsDetail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/bbsDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/bbsDetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/memberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/memberMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/sql-bbs-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/sql-bbs-mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bbs/bbsDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bbs/bbsDetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bbs/bbsList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bbs/bbsList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bbs/bbsWrite.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bbs/bbsWrite.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/deleteForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/mypage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/room.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/roomdetail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/save.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/update.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/blog/member/BlogBApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/encore/bbs/board/service/BbsServiceImplTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BbsSql.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/encore/bbs/BbsApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/encore/bbs/BbsApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/encore/bbs/board/controller/BbsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/encore/bbs/board/controller/BbsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/encore/bbs/board/dto/BbsDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/encore/bbs/board/dto/BbsDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/encore/bbs/board/dto/CountryDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/encore/bbs/board/dto/CountryDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/encore/bbs/board/dto/HashTag.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/encore/bbs/board/dto/HashTag.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/encore/bbs/board/mapper/BbsMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/encore/bbs/board/mapper/BbsMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/encore/bbs/board/service/BbsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/encore/bbs/board/service/BbsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/encore/bbs/board/service/BbsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/encore/bbs/board/service/BbsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/encore/bbs/chat/controller/ChatRoomController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/encore/bbs/chat/controller/ChatRoomController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/encore/bbs/chat/controller/MessageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/encore/bbs/chat/controller/MessageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/encore/bbs/chat/model/ChatMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/encore/bbs/chat/model/ChatMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/encore/bbs/chat/model/ChatRoom.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/encore/bbs/chat/model/ChatRoom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/encore/bbs/chat/repository/ChatRoomRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/encore/bbs/chat/repository/ChatRoomRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/encore/bbs/chat/service/ChatService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/encore/bbs/chat/service/ChatService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/encore/bbs/member/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/encore/bbs/member/controller/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/encore/bbs/member/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/encore/bbs/member/controller/MemberController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/encore/bbs/member/mapper/MemberMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/encore/bbs/member/mapper/MemberMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/encore/bbs/member/service/MemberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/encore/bbs/member/service/MemberService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/encore/bbs/member/service/MemberServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/encore/bbs/member/service/MemberServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper 연동위한 테스트.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/memberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/memberMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/sql-bbs-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/sql-bbs-mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/bbs/bbsEdit.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/bbs/mainpage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/bbsDetail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/bbsList.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/bbsWrite.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/chat/room.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/chat/room.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/deleteForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/mypage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/room.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/roomdetail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/save.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/tyhmeleaf.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/update.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +210,9 @@
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\이동혁\Desktop\NomadLog" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.encore.bbs.board.service" />

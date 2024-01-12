@@ -25,7 +25,9 @@
     	select * from usersTBL where member_id = #{memberId}
     </select>
 	
-
+	<select id="findAllCode" parameterType="Integer" resultType="member">
+    	select * from usersTBL where member_code = #{loginId}
+    </select>
 
 	<select id="findByIdBbs" parameterType="bbsDto" resultType="bbsDto"> 
     	select title, created_at, view_cnt, like_cnt from bbs where member_code = #{loginId}
@@ -46,8 +48,6 @@
     <delete id="deleteMember" parameterType="member" >
     	delete from usersTBL where member_code = #{loginId}
     </delete>
-
-
 
 </mapper>
 

@@ -4,53 +4,44 @@
 <mapper namespace="com.encore.bbs.comment.mapper.CommentMapper">
 
     <resultMap id="commentResultMap" type="com.encore.bbs.comment.dto.CommentDTO">
-        <id column="commentId" property="commentId"/>
-        <result column="bbsId" property="bbsId"/>
+        <id column="comment_id" property="commentId"/>
+        <result column="bbs_id" property="bbsId"/>
         <result column="content" property="content"/>
         <result column="writer" property="writer"/>
-        <result column="regDate" property="regDate"/>
-        <result column="modifyDate" property="modifyDate"/>
+        <result column="reg_date" property="regDate"/>
+        <result column="modify_date" property="modifyDate"/>
     </resultMap>
 
 
-    <!--    <select id="countCommentsByBbsId" resultType="java.lang.Integer">-->
-    <!--        SELECT COUNT(*) FROM comment WHERE bbsId = #{bbsId}-->
-    <!--    </select>-->
-
-    <!-- 댓글쓰기   // 댓글 저장 SQL bbsId가 필요하다.-->
-    <insert id="addComment" useGeneratedKeys="true" keyProperty="commentId" parameterType="com.encore.bbs.comment.dto.CommentDTO">
-        INSERT INTO comment (bbs_id, comment, writer, regDate)
-        VALUES  #{bbsId}, #{content}, #{writer}, now() )
+    <!-- 댓글쓰기   -->
+    <insert id="addComment" parameterType="com.encore.bbs.comment.dto.CommentDTO">
+        INSERT INTO comment (bbs_id, comment, writer, reg_date)
+        VALUES (#{bbsId}, #{content}, #{writer}, now() )
     </insert>
-
 
     <!-- 댓글id정보   -->
     <select id="findCommentById" resultMap="commentResultMap">
-        SELECT * FROM comment WHERE commentId = #{commentId}
+        SELECT * FROM comment WHERE comment_id = #{commentId}
     </select>
 
     <!--  조회  -->
-    <select id="getCommentsByBbsId" resultType="Long">
-        SELECT * FROM comment WHERE bbsId = #{bbsId}
+    <select id="getCommentsByBbsId" resultMap="commentResultMap">
+        SELECT * FROM comment WHERE bbs_id = #{bbsId}
     </select>
 
     <!-- 댓글수정   -->
     <update id="updateComment" parameterType="com.encore.bbs.comment.dto.CommentDTO">
-        UPDATE comment SET content = #{content}, modifyDate = now()
-        WHERE commentId = #{commentId}
+        UPDATE comment SET comment = #{content}, modify_date = now()
+        WHERE comment_id = #{commentId}
     </update>
 
     <!-- 삭제   -->
     <delete id="deleteComment" parameterType="Long">
-        DELETE FROM comment WHERE commentId = #{commentId}
+        DELETE FROM comment WHERE comment_id = #{commentId}
     </delete>
 
     <!-- 댓글cnt   -->
     <select id="countAllComments" resultType="java.lang.Integer">
         SELECT COUNT(*) FROM comment
     </select>
-    <select id="findBbsId" resultType="java.lang.Integer">
-
-    </select>
-
 </mapper>

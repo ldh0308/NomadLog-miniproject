@@ -27,4 +27,6 @@ public interface MemberMapper {
 	int code(MemberDTO memberDTO);
 
 	MemberDTO findId(String memberId);
+	
+	MemberDTO findAllCode(Integer loginId);
 }

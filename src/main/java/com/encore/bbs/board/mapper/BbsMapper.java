@@ -10,19 +10,21 @@ import com.encore.bbs.board.dto.BbsDTO;
 
 @Mapper
 public interface BbsMapper {
-	 List<BbsDTO> selectBbsList() throws Exception; 
-	 
-	 void insertBbs(BbsDTO bbs) throws Exception;
-	
-	 void updateViewCount(int bbsId) throws Exception;
-	 
-	 BbsDTO selectBbsDetail(int bbsId) throws Exception;
-	 
-	 void updateBbs(BbsDTO bbs) throws Exception;
-	 
-	 void deleteBbs(int bbsId) throws Exception;
+	List<BbsDTO> selectBbsList() throws Exception;
 
-	 void insertHashtag(HashTag hashTag)throws Exception;
+	void insertBbs(BbsDTO bbs) throws Exception;
+
+	void updateViewCount(int bbsId) throws Exception;
+
+	BbsDTO selectBbsDetail(int bbsId) throws Exception;
+
+	void updateBbs(BbsDTO bbs) throws Exception;
+	
+	BbsDTO updatedeleteBbs(int bbsId) throws Exception;
+
+	void deleteBbs(int bbsId) throws Exception;
+
+	void insertHashtag(HashTag hashTag)throws Exception;
 
 	Long getLatestBbsId();
 
@@ -31,4 +33,8 @@ public interface BbsMapper {
 	Long selectCountryBbs(Long countryId);
 
 	void insertCountry(BbsDTO bbs) throws Exception; //국가저장 메서드
+
+	List<CountryDto> findCountryById(int bbsId);
+	
+	int selectId(int bbsId);
 }

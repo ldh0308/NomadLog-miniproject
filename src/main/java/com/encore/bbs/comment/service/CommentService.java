@@ -14,7 +14,7 @@ public interface CommentService {
      * @param bbsId 게시물 번호
      * @return 댓글 목록
      */
-    List<CommentDTO> getCommentsByBbsId(Long bbsId);
+    List<CommentDTO> getCommentsByBbsId(int bbsId);
 
     /**
      * 댓글 식별자에 댓글 id 가져오는 메서드
@@ -25,11 +25,9 @@ public interface CommentService {
 
     /**
      * 새로운 댓글을 추가하는 메서드
-     *
      * @param commentDTO 추가할 댓글 정보
-     * @return
      */
-    Long addComment(CommentDTO commentDTO);
+    void addComment(CommentDTO commentDTO);
 
     /**
      * 댓글을 수정하는 메서드

@@ -30,7 +30,7 @@ public class ChatRoomController {
     public String rooms(Model model, HttpSession session) {
     	Integer loginId = (Integer)session.getAttribute("loginId");
     	model.addAttribute("loginId", loginId);
-        return "room";
+        return "/member/login";
     }
     // 모든 채팅방 목록 반환
     @GetMapping("/rooms")
@@ -39,21 +39,21 @@ public class ChatRoomController {
         return chatService.findAllRoom();
     }
     // 채팅방 생성
-    @PostMapping("/room")
-    @ResponseBody
+  /*  @PostMapping("/room")*/
+ /*   @ResponseBody
     public ChatRoom createRoom(@RequestParam String name) {
         return chatService.createRoom(name);
-    }
+    }*/
     // 채팅방 입장 화면
-    @GetMapping("/room/enter/{roomId}")
-    public String roomDetail(Model model, @PathVariable String roomId) {
-        model.addAttribute("roomId", roomId);
-        return "roomdetail";
+    @GetMapping("/room/enter/{bbsId}")
+    public String roomDetail(Model model, @PathVariable String bbsId) {
+        model.addAttribute("bbsId", bbsId);
+        return "/chat/roomdetail";
     }
     // 특정 채팅방 조회
-    @GetMapping("/room/{roomId}")
+    @GetMapping("/room/{bbsId}")
     @ResponseBody
-    public ChatRoom roomInfo(@PathVariable String roomId) {
-        return chatService.findById(roomId);
+    public ChatRoom roomInfo(@PathVariable String bbsId) {
+        return chatService.findById(bbsId);
     }
 }

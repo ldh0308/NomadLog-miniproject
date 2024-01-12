@@ -1,11 +1,10 @@
 package com.encore.bbs.comment.service;
 
-import com.encore.bbs.board.dto.BbsDTO;
-import com.encore.bbs.board.dto.HashTag;
 import com.encore.bbs.board.mapper.BbsMapper;
 import com.encore.bbs.comment.dto.CommentDTO;
 import com.encore.bbs.comment.mapper.CommentMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,30 +14,20 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CommentServiceImpl implements CommentService {
 
+    @Autowired
     private final CommentMapper commentMapper;
     private final BbsMapper bbsMapper;
+    
     @Override
-    public List<CommentDTO> getCommentsByBbsId(Long bbsId) {
-
+    public List<CommentDTO> getCommentsByBbsId(int bbsId) {
         return commentMapper.getCommentsByBbsId(bbsId);
     }
 
-    //@Override
-    //@Transactional
-    //public Long addComment(BbsDTO bbsDTO, String content) {
-        //CommentDTO bbsId = new CommentDTO();
-       //commentMapper.getCommentsByBbsId(bbsId);
-       //commentMapper.addComment(commentDTO);
-       // Long savedBbsId = CommentMapper.getLatestBbsId();
-
-       // HashTag hashTag = new HashTag();
-      //  hashTag.setBbsId(savedBbsId); // 해당 객체에 저장아이디 반환
-       // hashTag.setContent(content); // 해당 객체에 작성한 내용 반환
-
-        //해시태그 인서트
-       // bbsmapper.insertHashtag(hashTag);
-
-    //}
+    @Override
+    @Transactional
+    public void addComment(CommentDTO commentDTO) {
+        commentMapper.addComment(commentDTO);
+    }
 
     @Override
     @Transactional
@@ -65,10 +54,5 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public CommentDTO findCommentById(Long commentId) {
         return commentMapper.findCommentById(commentId);
-    }
-
-    @Override
-    public Long addComment(CommentDTO commentDTO) {
-        return commentMapper.addComment(commentDTO);
     }
 }

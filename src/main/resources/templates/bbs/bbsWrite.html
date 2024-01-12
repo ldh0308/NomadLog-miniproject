@@ -2,46 +2,45 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
-	<title>bbs_insert</title>
+	<title>NomardLog | 게시글작성</title>
 	<link rel="stylesheet" th:href="@{/css/style.css}"/>
 </head>
-	<body>
-			<div class="container">
-			<h2>게시글 등록</h2>
-			<form id="frm" name="frm" method="post" action="/bbs/write"
-			      enctype="multipart/form-data">
-			      
-			<table class="bbs_detail">
-				<tr>
-					<select class="form-select" aria-label="Default select example">
-						<option selected>국가를 선택하세요</option>
-						<option th:each="con : ${countryDtoList}" th:value="${con.countryName}"
-								th:text="${con.countryName}"></option>
-					</select> <br>
-					<!--                <td>국가</td>-->
-					<!--                <td><select th:field="*{countryList}" class="form-select">-->
-					<!--                    <option value="">국가 선택</option>-->
-					<!--                    <option th:each="con : ${countryList}" th:value="${con.countryName}"-->
-					<!--                            th:text="${con.countryName}"></option>-->
-					<!--                </select></td>-->
-				</tr>
-				<tr>
-					<td>제목</td>
-					<td><input type="text" id="title" name="title"></td>
-				</tr>
-				<tr>
-					<td colspan="2">
-						<textarea id="contents" name="contents"></textarea>
-					</td>
-				</tr>
-				<tr>
-					<td colspan="2">
-						<textarea id="content" name="content"></textarea>
-					</td>
-				</tr>
-			</table>
-			<input type="submit" id="submit" value="저장" class="btn">
-		</form>
-	</div>
+<body>
+<div class="container">
+	<h2>게시글 등록</h2>
+	<form id="frm" name="frm" method="get" action="/bbs/write" enctype="multipart/form-data">
+
+       <table class="bbs_detail">
+          <tr>
+          <td>국가</td>
+          <td><select th:field="*{countryDtoList}" class="form-select">
+             <option value="">국가 선택</option>
+             <option th:each="con : ${countryDtoList}" th:value="${con.countryName}"
+                   th:text="${con.countryName}"></option>
+          </select></td>
+          </tr>
+          <tr>
+				<td>제목</td>
+				<td><input type="text" id="title" name="title"></td>
+			</tr>
+			<tr>
+				<td>내용</td>
+				<td colspan="2">
+					<textarea id="contents" name="contents"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>해시태그</td>
+				<td colspan="2">
+					<textarea id="content" name="content"></textarea>
+				</td>
+			</tr>
+		  </table>
+		  <span th:if="${memberDTO != null}" th:text="${memberDTO.memberCode}"></span>
+		<input type="submit" id="submit" value="저장" class="btn">
+		<input type="hidden" id="memberCode" name="memberCode" th:value="${memberDTO.memberCode}">
+<!-- 		<input type="hidden" id="countryId" name="countryId" th:value="${countryDtoList.countryId}"> -->
+	</form>
+</div>
 </body>
 </html>

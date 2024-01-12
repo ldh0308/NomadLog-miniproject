@@ -13,17 +13,17 @@ import java.util.List;
 public interface CommentMapper {
 
     /**
-     * 게시물 번호에 해당하는 댓글 목록을 가져오는 메서드
+     * 게시물 번호에 해당하는 댓글 목록을 가져오는 메서드(조회)
      * @param bbsId 게시물 번호
      * @return 댓글 목록
      */
-    List<CommentDTO> getCommentsByBbsId(Long bbsId);
+    List<CommentDTO> getCommentsByBbsId(int bbsId);
 
     /**
      * 새로운 댓글을 추가하는 메서드
      * @param commentDTO 추가할 댓글 정보
      */
-    Long addComment(CommentDTO commentDTO);
+    void addComment(CommentDTO commentDTO);
 
 
     /**
@@ -50,7 +50,5 @@ public interface CommentMapper {
      * @return 댓글 전체 개수
      */
     int countAllComments();
-
-    int findBbsId();
 
 }

@@ -18,6 +18,8 @@ public class ChatMessage {
     private MessageType type;
     //채팅방 ID
     private String roomId;
+
+    private String bbsId;
     //보내는 사람
     private String sender;
     //내용

@@ -37,7 +37,8 @@
 <!-- JavaScript -->
 <script src="/webjars/vue/2.5.16/vue.min.js"></script>
 <script src="/webjars/axios/0.17.1/dist/axios.min.js"></script>
-<script>
+<script th:inline="javascript">
+	var loginId = [[${loginId}]];
     var vm = new Vue({
         el: '#app',
         data: {
@@ -71,11 +72,12 @@
                 }
             },
             enterRoom: function(roomId) {
-                var sender = prompt('사용자 이름을 입력하세요.');
-                if(sender !== "") {
-                    localStorage.setItem('wschat.sender',sender);
+                if(loginId != null) {
+                    localStorage.setItem('wschat.sender',loginId);
                     localStorage.setItem('wschat.roomId',roomId);
                     location.href="/chat/room/enter/"+roomId;
+                } else{
+                	location.href="/member/login"
                 }
             }
         }

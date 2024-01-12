@@ -13,7 +13,7 @@ public class HashTag {
     private Long bbsId;
 
     public HashTag(String content, Long bbsId) {
-        this.bbsId = bbsId;
         this.content = content;
+        this.bbsId = bbsId;
     }
 }
