@@ -45,10 +45,10 @@
 							<td th:text="${country.continentName}"></td>
 						</tr>
 						<tr>
-							<td colspan="4" class="fs-5" th:text="${bbs.title}"></td>
+							<td colspan="4" class="bbs-title fs-5" th:text="${bbs.title}"></td>
 						</tr>
 						<tr>
-							<td colspan="4" th:text="${bbs.contents}"></td>
+							<td colspan="4" class="bbs-content" th:text="${bbs.contents}"></td>
 						</tr>
 					</tbody>
 				</table>
@@ -92,10 +92,10 @@
 					<div>
 						<input type="hidden" name="writer" id="writer" th:if="${loginId != null}" th:value="${memberId.memberId}">
 						<input type="hidden" name="writer" th:unless="${loginId != null}" th:value="Id없음">
-x					</div>
-					<div>
+					</div>
+					<div class="btn-group">
 						<textarea  name="content" id="content" placeholder="내용" style="resize:none;"></textarea>
-						<button type="button" id="comment-write-btn" class="btn" onclick="submitOrRedirect()">글쓰기</button>
+						<button type="button" id="comment-write-btn" class="btn btn-secondary"style="width:110px;" onclick="submitOrRedirect()">글쓰기</button>
 					</div>
 				</form>
 			</div>

@@ -157,3 +157,9 @@ caption , .hidden {display:none; width:0; height:0; margin-top:-1px; overflow:hi
 .page-wrap.bbslist .table a.title,
 .page-wrap.bbslist .table a:link,
 .page-wrap.bbslist .table a:visited{ color: #333; text-decoration: none;}
+.bbs-title{
+    padding: 13px 30px;
+}
+.bbs-content{padding:30px;}
+#comment-write .btn-group{display:flex;justify-content:center;}
+#comment-write textarea{width:100%}
