@@ -12,14 +12,14 @@ import com.encore.bbs.comment.service.CommentService;
 
 import lombok.RequiredArgsConstructor;
 
-@Controller
+@RestController
 @RequiredArgsConstructor
-@RequestMapping("/comment")
+//@RequestMapping("/comments")
 public class CommentController {
 
     private final CommentService commentService;
 
-    @PostMapping("/save")
+    @PostMapping("/comment")
     public String saveComment(@ModelAttribute CommentDTO commentDTO) {
         commentService.addComment(commentDTO);
 
@@ -27,9 +27,26 @@ public class CommentController {
         return "redirect:/bbs/" + commentDTO.getBbsId();
     }
 
+    //지정한 게시물의 모든 댓글 가져오기
+    @GetMapping("/comment")
+    public ResponseEntity<List<CommentDTO>> list(String bbsId){
+        List<CommentDTO> list = null;
+
+        try {
+            List<CommentDTO> result = commentService.getCommentsByBbsId(Integer.parseInt(bbsId));
+
+            System.out.println("list= "+result);
+
+            return new ResponseEntity<List<CommentDTO>>(result, HttpStatus.OK); //200
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ResponseEntity<List<CommentDTO>>(HttpStatus.BAD_REQUEST); //400
+        }
+    }
+
+
     // 주어진 commentId로 댓글을 업데이트합니다.
-    @PatchMapping("/{commentId}") //댓글넘버
-    @ResponseBody
+    @PatchMapping("/comments/{commentId}") //댓글넘버
     public ResponseEntity<String> updateComment(@RequestParam("commentId") long commentId, @RequestBody CommentDTO commentDTO) {
         // 댓글 작성자를 지정
         String writer = "rahee2"; // http 세션값 매개변수를 담아줘야하는데
@@ -52,18 +69,11 @@ public class CommentController {
         }
     }
 
-    // 삭제
-    @PostMapping("delete")
-    public String deleteComment(@RequestParam("commentId") long commentId, @RequestParam("bbsId") String bbsId) {
-        commentService.deleteComment(commentId, bbsId);
-        // 댓글 삭제 후, 해당 게시글의 상세 페이지로 이동
-        return "redirect:/bbs/" + bbsId;
-    }
 
 
 
     // 지정한 댓글을 삭제하는 메소드
-    @DeleteMapping("/{commentId}")
+    @DeleteMapping("/comment/{commentId}")
     public ResponseEntity<String> remove(@PathVariable("commentId") long commentId, @RequestParam("bbsId") String bbsId) {
         try {
             int result = commentService.deleteComment(commentId, bbsId);
@@ -82,4 +92,14 @@ public class CommentController {
             return new ResponseEntity<>("삭제실패", HttpStatus.BAD_REQUEST);
         }
     }
+
+
+    // 삭제
+//    @PostMapping("/comment/delete")
+//    public String deleteComment(@RequestParam("commentId") long commentId, @RequestParam("bbsId") String bbsId) {
+//        commentService.deleteComment(commentId, bbsId);
+//        // 댓글 삭제 후, 해당 게시글의 상세 페이지로 이동
+//        return "redirect:/bbs/" + bbsId;
+//    }
+
 }

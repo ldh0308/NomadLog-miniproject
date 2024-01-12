@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 상세 정보</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+</head>
+<body>
+<!-- 게시글 상세페이지 내용 start -->
+
+<!-- 게시글 상세페이지 내용 end -->
+
+
+<!-- 댓글 작성 폼 -->
+<div id="comment-write">
+    <div>
+        <input type="text" name="writer" id="commentWriter" placeholder="작성자">
+        <!--  추후 로그인 세션을 가져오면 여기에 작성자값 넣어 readonly
+            <input type="text" name="writer" id="" value="${comment.commentWriter}" disabled />
+        -->
+    </div>
+    <div>
+        <textarea  name="content" id="commentContents" placeholder="내용" style="resize:none;"></textarea>
+        <button id="comment-write-btn" onclick="commentWrite()">댓글작성</button>
+    </div>
+</div>
+
+<!-- 댓글 목록 -->
+<div id="comment-list">
+    <table>
+        <thead>
+            <tr>
+                <th>댓글번호</th>
+                <th>작성자</th>
+                <th>내용</th>
+                <th>작성시간</th>
+                <th><!-- 수정 --></th>
+                <th><!-- 삭제 --></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="comment: ${commentList}">
+                <td th:text="${comment.commentId}"></td>
+                <td th:text="${comment.commentWriter}"></td>
+                <td th:text="${comment.commentContents}"></td>
+                <td th:text="${comment.commentCreatedTime}"></td>
+                <td><button onclick="updateComment([[${comment.commentId}]])">수정</button></td>
+                <td><button onclick="deleteComment([[${comment.commentId}]])">삭제</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script th:inline="javascript">
+    const commentWrite = () => {
+        const writer = document.getElementById("commentWriter").value;
+        const content = document.getElementById("commentContents").value;
+
+        console.log("작성자: ", writer);
+        console.log("내용: ", content);
+
+       // const bbsId = [[${board.bbsId}]]; 주석처리 한 거 잊지말자
+
+        $.ajax({
+            type: "post",
+            url: "/comments/save",
+            data: {
+                "commentWriter": writer,
+                "commentContents": content,
+                //"boardId": bbsId // 주석처리 되어 있음을 잊지말자
+            },
+            success: function (res) {
+                console.log("요청성공", res);
+                // 댓글 추가 후 목록 갱신
+                //updateCommentList(res);
+            },
+            error: function (err) {
+                console.log("요청실패", err);
+                alert("댓글 작성에 실패했습니다.");
+            }
+        });
+    }
+
+    const updateCommentList = (comment) => {
+        let output = "<table>";
+            output += "<tr><th>댓글번호</th>";
+            output += "<th>작성자</th>";
+            output += "<th>내용</th>";
+            output += "<th>작성시간</th>";
+            output += "<th>수정</th>";
+            output += "<th>삭제</th></tr>";
+
+            for (let i in comment) {
+                output += "<tr>";
+                output += "<td>" + comment[i].id + "</td>";
+                output += "<td>" + comment[i].commentWriter + "</td>";
+                output += "<td>" + comment[i].commentContents + "</td>";
+                output += "<td>" + comment[i].commentCreatedTime + "</td>";
+                output += "<td><button onclick='updateComment(" + comment[i].id + ")'>수정</button></td>";
+                output += "<td><button onclick='deleteComment(" + comment[i].id + ")'>삭제</button></td>";
+                output += "</tr>";
+            }
+        output += "</table>";
+        document.getElementById('comment-list').innerHTML = output;
+
+        // 작성자와 내용 입력 필드 초기화
+        document.getElementById('commentWriter').value = '';
+        document.getElementById('commentContents').value = '';
+    }
+
+     const updateComment = (commentId) => {
+        console.log("수정 요청", commentId);
+        // 수정 또한 ajax로 할지 페이지 이동으로 처리할지..
+    }
+
+    const deleteComment = (commentId) => {
+        console.log("삭제 요청", commentId);
+        confirm("댓글을 삭제하시겠습니까?");
+    }
+</script>
+
+</body>
+</html>
