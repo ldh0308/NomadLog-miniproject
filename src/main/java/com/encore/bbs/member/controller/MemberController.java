@@ -4,7 +4,12 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.encore.bbs.board.dto.BbsDTO;
 import com.encore.bbs.member.dto.MemberDTO;
@@ -63,7 +68,7 @@ public class MemberController {
 			// 로그인이 성공한 경우, 세션에 현재 로그인한 사용자의 아이디를 저장하는 코드
 			// setAttribute 메서드는 세션에 속성(attribute)을 설정하는 메서드다. 
 			// 세션 객체에는 여러 속성을 저장할 수 있으며, 각 속성은 고유한 이름(키)을 가지게되는데 이때 "loginId"는 세션에 저장될 속성의 이름(키)이다. 
-			return "main";
+			return "/member/main";
 		} else {
 			return "/member/login";
 		}
@@ -100,9 +105,9 @@ public class MemberController {
 	public String update(@ModelAttribute MemberDTO memberDTO) {
 		boolean updateResult = memberService.update(memberDTO);
 		if (updateResult) {
-			return "/main"; //"redirect:/memebr?memberId=" + memberDTO.getMemberId()
+			return "/member/main"; //"redirect:/memebr?memberId=" + memberDTO.getMemberId()
 		} else {
-			return "/main";
+			return "index";
 		}
 		
 	}
