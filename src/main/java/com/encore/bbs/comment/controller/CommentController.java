@@ -18,13 +18,7 @@ public class CommentController {
 
     private final CommentService commentService;
 
-    @PostMapping("/comment")
-    public String saveComment(@ModelAttribute CommentDTO commentDTO) {
-        commentService.addComment(commentDTO);
 
-        // 댓글 추가 후, 해당 댓글이 속한 게시글의 상세 페이지로 이동
-        return "redirect:/bbs/" + commentDTO.getBbsId();
-    }
 
     //지정한 게시물의 모든 댓글 가져오기
     @GetMapping("/comment")
@@ -43,6 +37,13 @@ public class CommentController {
         }
     }
 
+    @PostMapping("/comment/save")
+    public String saveComment(@ModelAttribute CommentDTO commentDTO) {
+        commentService.addComment(commentDTO);
+
+        // 댓글 추가 후, 해당 댓글이 속한 게시글의 상세 페이지로 이동
+        return "redirect:/bbs/" + commentDTO.getBbsId();
+    }
 
     // 주어진 commentId로 댓글을 업데이트합니다.
     @PatchMapping("/comment/{commentId}") //댓글넘버
