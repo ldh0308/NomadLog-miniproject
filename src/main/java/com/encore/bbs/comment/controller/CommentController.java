@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import com.encore.bbs.comment.dto.CommentDTO;
@@ -46,7 +45,7 @@ public class CommentController {
 
 
     // 주어진 commentId로 댓글을 업데이트합니다.
-    @PatchMapping("/comments/{commentId}") //댓글넘버
+    @PatchMapping("/comment/{commentId}") //댓글넘버
     public ResponseEntity<String> updateComment(@RequestParam("commentId") long commentId, @RequestBody CommentDTO commentDTO) {
         // 댓글 작성자를 지정
         String writer = "rahee2"; // http 세션값 매개변수를 담아줘야하는데
