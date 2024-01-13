@@ -35,7 +35,7 @@ public class MemberController {
 
 	@GetMapping("/save")
 	public String saveForm() {
-		return "member/save";
+		return "/member/save";
 	}
 
 	@PostMapping("/save")
@@ -89,7 +89,7 @@ public class MemberController {
 	    model.addAttribute("loggedInMember", loggedInBbsDTOList); // 리스트 결과를 loggedInMemberDTOList에 담아서 mypage로 보낸다.
 //	    model2.addAttribute("loggedInComment", loggedInCommentDTOList); // 리스트 결과를 loggedInMemberDTOList에 담아서 mypage로 보낸다.
 	    
-	    return "/mypage/mypage"; // 해당 정보를 출력할 페이지 이름으로 수정
+	    return "/member/mypage"; // 해당 정보를 출력할 페이지 이름으로 수정
 	}
 	
 	@GetMapping("/update")
@@ -105,7 +105,7 @@ public class MemberController {
 	public String update(@ModelAttribute MemberDTO memberDTO) {
 		boolean updateResult = memberService.update(memberDTO);
 		if (updateResult) {
-			return "/member/main"; //"redirect:/memebr?memberId=" + memberDTO.getMemberId()
+			return "main"; //"redirect:/memebr?memberId=" + memberDTO.getMemberId()
 		} else {
 			return "index";
 		}
@@ -138,23 +138,21 @@ public class MemberController {
         
         session.invalidate();
         
-        return "/member/main";
-        
+        return "redirect:/";
     }
 	
 	@GetMapping("delete")
 	public String deleteForm() {
-		return "deleteForm";
+		return "/member/deleteForm";
 	}
 	
 	@GetMapping("del") // delete로도 해뵈기
 	public String delete(HttpSession session) {
 		int loginId = (int) session.getAttribute("loginId");
 		memberService.delete(loginId);
-		return "index";
+		return "redirect:/";
 	}
-	
-	
+
 }
 
 

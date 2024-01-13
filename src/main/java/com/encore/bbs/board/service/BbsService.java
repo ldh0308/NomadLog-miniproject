@@ -20,6 +20,8 @@ public interface BbsService {
 
 	void deleteBbs(int bbsId) throws Exception;
 
+    BbsDTO updatedeleteBbs(int bbsId) throws Exception;
+
 	void insertHashtag(HashTag hashTag)throws Exception;
 
 	Long getLatestBbsId();
@@ -32,4 +34,5 @@ public interface BbsService {
 
 	//void insertCountry(BbsDTO bbs) throws Exception;
 
+    int selectId(int bbsId);
 }
