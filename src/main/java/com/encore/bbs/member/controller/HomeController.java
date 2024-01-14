@@ -9,6 +9,6 @@ public class HomeController {
 	@GetMapping("/")
 	public String index() {
 
-		return "index"; // templates 폴더에 있는 index.html 파일 찾아감. thymeleaf 때문
+		return "/index"; // templates 폴더에 있는 index.html 파일 찾아감. thymeleaf 때문
 	}
 }

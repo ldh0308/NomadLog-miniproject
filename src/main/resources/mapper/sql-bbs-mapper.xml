@@ -11,10 +11,14 @@
 		WHERE is_deleted = '0'
 		ORDER BY bbs_id DESC
 	</select>
+
 	<insert id="insertBbs" parameterType="BbsDTO" useGeneratedKeys="true" keyProperty="bbsId">
-		INSERT INTO bbs(title, contents, created_at, country_id, member_code)
-		VALUES (#{title},#{contents},NOW(), #{countryId}, #{memberCode})
+		INSERT INTO bbs
+			(title, contents, created_at, country_id, member_code)
+		VALUES
+			(#{title},#{contents},NOW(), #{countryId}, #{memberCode});
 	</insert>
+
 	<select id="selectBbsDetail" parameterType="int" resultType="BbsDTO">
 		<!-- select * from bbs WHERE bbs_id = #{bbsId} -->
 
@@ -30,21 +34,33 @@
 		WHERE bbs_id = #{bbsId}
 	</update>
 
+	<update id="updatedeleteBbs" parameterType="BbsDTO">
+		UPDATE bbs SET
+		title = #{title},
+		contents = #{contents},
+		country_id = #{countryId, jdbcType=INTEGER},<!-- jdbcType 추가 -->
+		member_code = #{memberCode, jdbcType=INTEGER}, <!-- jdbcType 추가 -->
+		modify_at = NOW()
+		WHERE
+		bbs_id=#{bbsId}
+	</update>
+
 	<update id="updateBbs" parameterType="BbsDTO">
 		UPDATE bbs SET
 		title = #{title},
 		contents = #{contents},
+		country_id = #{countryId},<!-- jdbcType 추가 , jdbcType=INTEGER -->
+		member_code = #{memberCode}, <!-- jdbcType 추가 , jdbcType=INTEGER -->
 		modify_at = NOW()
 		WHERE
 		bbs_id=#{bbsId}
 	</update>
-	<update id="deleteBbs" parameterType="int">
-		UPDATE bbs SET
-		is_deleted = '1',
-		modify_at = NOW()
-		WHERE
-		bbs_id=#{bbsId}
-	</update>
+
+	<delete id="deleteBbs" parameterType="int">
+    DELETE FROM bbs
+    WHERE bbs_id=#{bbsId}
+	</delete>
+
 	<insert id="insertHashtag" useGeneratedKeys="true" keyProperty="hashtagId" parameterType="com.encore.bbs.board.dto.HashTag">
 		INSERT INTO hashtag(bbs_id, content)
 		VALUES (#{bbsId}, #{content});
@@ -69,11 +85,19 @@
 
 	<!--상세 게시글 국가정보 넣기-->
 	<select id="findCountryById" resultType="com.encore.bbs.board.dto.CountryDto">
-		SELECT b.country_id, co.country_name, co.continent_name
+		SELECT b.country_id,
+			   co.country_name,
+			   co.continent_name
 		FROM bbs b
-				 JOIN countries co ON b.country_id = co.country_id
-		WHERE b.bbs_id = #{bbsId};
+				 JOIN countries co
+				 ON   b.country_id = co.country_id
+		WHERE
+			b.bbs_id = #{bbsId};
+	</select>
+
+	<select id="selectId" resultType="BbsDTO">
+		select * from bbs WHERE bbs_id = #{bbsId}
 	</select>
 
 
-</mapper> 
+</mapper>

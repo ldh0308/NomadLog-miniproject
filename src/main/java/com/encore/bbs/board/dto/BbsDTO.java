@@ -12,14 +12,14 @@ import lombok.NoArgsConstructor;
 public class BbsDTO {
 
 	private int bbsId;
-	private int memberCode;
+	private Integer memberCode;
 	private String title;
 	private String contents;
 	private LocalDateTime createdAt;
 	private LocalDateTime modifyAt;
 	private int viewCnt;
 	private int likeCnt;
-	private int tagId;
+	private int hashtagId;
 	private boolean isDeleted;
 	private Long countryId;
 	private String memberId;
