@@ -64,8 +64,10 @@ public class BbsController {
 	}
 
 	@RequestMapping(value = "/bbs/write", method = RequestMethod.POST)
-	public String insertBbs(@ModelAttribute BbsDTO bbs, @RequestParam String content) throws Exception {
+	public String insertBbs(@ModelAttribute BbsDTO bbs, @RequestParam String content, @RequestParam("countryId") String countryId) throws Exception {
 
+		Long saveCountryId = Long.parseLong(countryId);
+		bbs.setCountryId(saveCountryId);
 		bbsService.insertBbs(bbs, content);
 		MemberDTO memberDTO = memberService.findAllCode(bbs.getMemberCode());
 

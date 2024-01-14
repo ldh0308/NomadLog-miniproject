@@ -21,6 +21,6 @@ public class BbsDTO {
 	private int likeCnt;
 	private int hashtagId;
 	private boolean isDeleted;
-	private Integer countryId;
+	private Long countryId;
 	private String memberId;
 }
