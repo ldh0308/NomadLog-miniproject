@@ -110,8 +110,9 @@ public class BbsController {
 		System.out.println(bbsId);
 		ModelAndView mv = new ModelAndView("/bbs/bbsEditDelete");
 		BbsDTO bbs = bbsService.selectBbsDetail(bbsId);
-
+		List<CountryDto> countryList = bbsService.findCountryById(bbsId);
 		mv.addObject("bbs", bbs);
+		mv.addObject("countrys", countryList);
 
 		return mv;
 
@@ -120,7 +121,9 @@ public class BbsController {
 	//	@RequestMapping(value= "/bbs/{bbsId}", method=RequestMethod.PUT)  // 수정요청
 	@PostMapping("bbs/update/{bbsId}")
 	public String updateBbs(BbsDTO bbs) throws Exception {
+
 		bbsService.updateBbs(bbs);         //게시글 수정
+
 		return "redirect:/bbs";  //수정완료 후 게시판 목록으로
 	}
 
