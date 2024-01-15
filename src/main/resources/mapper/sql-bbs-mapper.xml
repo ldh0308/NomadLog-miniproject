@@ -101,5 +101,11 @@
         WHERE bbs_id = #{bbsId}
     </select>
 
+    <select id="getHashtagList" resultType="com.encore.bbs.board.dto.HashTag">
+        select *
+        from hashtag
+        WHERE bbs_id = #{bbsId}
+    </select>
+
 
 </mapper>

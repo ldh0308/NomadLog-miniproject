@@ -94,6 +94,11 @@ public class BbsServiceImpl implements BbsService {
 	}
 
 	@Override
+	public List<HashTag> getHashtagList(int bbsId) {
+		return bbsmapper.getHashtagList(bbsId);
+	}
+
+	@Override
 	public Long selectCountryBbs(Long countryId) {
 		return bbsmapper.selectCountryBbs(countryId);
 	}

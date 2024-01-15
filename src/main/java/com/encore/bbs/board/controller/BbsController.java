@@ -3,6 +3,7 @@ package com.encore.bbs.board.controller;
 import java.util.List;
 
 import com.encore.bbs.board.dto.CountryDto;
+import com.encore.bbs.board.dto.HashTag;
 import com.encore.bbs.comment.dto.CommentDTO;
 import com.encore.bbs.comment.service.CommentService;
 import com.encore.bbs.member.dto.MemberDTO;
@@ -82,6 +83,7 @@ public class BbsController {
 		MemberDTO memberDTO = memberService.findAllCode(bbs.getMemberCode());
 		List<CommentDTO> commentList = commentService.getCommentsByBbsId(bbsId);
 		List<CountryDto> countryList = bbsService.findCountryById(bbsId);
+		List<HashTag> hashTagList = bbsService.getHashtagList(bbsId);
 
 		// 추가 사항
 //		MemberDTO memberDTO = memberService.findAllCode(bbs.getMemberCode());
@@ -99,6 +101,7 @@ public class BbsController {
 		mv.addObject("comments", commentList);
 		mv.addObject("country", countryList);
 		mv.addObject("memberDTO", memberDTO);
+		mv.addObject("hashTagList", hashTagList);
 		return mv;
 
 	}
