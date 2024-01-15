@@ -166,3 +166,9 @@ caption , .hidden {display:none; width:0; height:0; margin-top:-1px; overflow:hi
 #comment-write textarea{width:100%}
 #comment-write .writer{ color:#0d6efd; border:1px solid #0d6efd; border-radius: 3px; padding: 3px; font-weight: bold;}
 #comment-write .comment-cotnent{ }
+
+.main-img{
+    display:block;
+    height:500px;
+    margin: 0 auto;
+}
