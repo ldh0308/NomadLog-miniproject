@@ -254,9 +254,9 @@ caption,
 #comment-write textarea {
     width: 100%;
 }
-#comment-write .comment-writer {
+.comment-writer {
     padding: 3px;
     font-weight: bold;
 }
-#comment-write .comment-content {
+.comment-content {
 }
