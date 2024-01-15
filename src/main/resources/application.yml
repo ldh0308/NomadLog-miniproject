@@ -9,8 +9,8 @@ spring:
       encoding: UTF-8 
       mode: always
   datasource:
+#    url: jdbc:mariadb://localhost:3306/encorebbs
     url: jdbc:mariadb://192.168.0.14:3306/encorebbs
-#    url: jdbc:mariadb://127.0.0.1:3306/encorebbs
     driver-class-name: org.mariadb.jdbc.Driver
     username: root
     password: gur0215
