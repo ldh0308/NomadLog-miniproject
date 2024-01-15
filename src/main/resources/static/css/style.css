@@ -234,6 +234,7 @@ caption,
 .page-wrap.bbsDetail .bbs-content {
     padding: 30px;
     font-size: 16px;
+    white-space: break-spaces;
 }
 .page-wrap.bbsDetail .btn-area{
     margin-top:40px;
