@@ -225,15 +225,27 @@ caption,
     color: #333;
     text-decoration: none;
 }
-.bbs-title {
+.page-wrap.bbtDetail .tb_detail{ border-bottom: 2px solid;}
+.page-wrap.bbsDetail .bbs-title {
     padding: 13px 30px;
+    font-weight: bold;
+    font-size: 18px;
 }
-.bbs-content {
+.page-wrap.bbsDetail .bbs-content {
     padding: 30px;
+    font-size: 16px;
 }
-.bbtDetail .btn-area .btn {
+.page-wrap.bbtDetail .btn-area{
+    margin-top:40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.page-wrap.bbtDetail .btn-area .btn {
     margin-left: 15px;
 }
+#comment-write{ margin-top: 60px;}
 #comment-write .btn-group {
     display: flex;
     justify-content: center;
@@ -241,12 +253,9 @@ caption,
 #comment-write textarea {
     width: 100%;
 }
-#comment-write .writer {
-    color: #0d6efd;
-    border: 1px solid #0d6efd;
-    border-radius: 3px;
+#comment-write .comment-writer {
     padding: 3px;
     font-weight: bold;
 }
-#comment-write .comment-cotnent {
+#comment-write .comment-content {
 }
