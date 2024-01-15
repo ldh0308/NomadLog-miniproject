@@ -43,6 +43,10 @@
 						<th scope="col">대 륙</th>
 						<td th:text="${country.continentName}"></td>
 					</tr>
+					<tr th:each="hashtag : ${hashTagList}">
+						<th scope="col">해시태그</th>
+						<td th:text="${hashtag.content}"></td>
+					</tr>
 					<tr>
 						<td colspan="4" class="bbs-title" th:text="${bbs.title}"></td>
 					</tr>
