@@ -225,7 +225,7 @@ caption,
     color: #333;
     text-decoration: none;
 }
-.page-wrap.bbtDetail .tb_detail{ border-bottom: 2px solid;}
+.page-wrap.bbsDetail .tb_detail{ border-bottom: 2px solid;}
 .page-wrap.bbsDetail .bbs-title {
     padding: 13px 30px;
     font-weight: bold;
@@ -235,14 +235,14 @@ caption,
     padding: 30px;
     font-size: 16px;
 }
-.page-wrap.bbtDetail .btn-area{
+.page-wrap.bbsDetail .btn-area{
     margin-top:40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.page-wrap.bbtDetail .btn-area .btn {
+.page-wrap.bbsDetail .btn-area .btn {
     margin-left: 15px;
 }
 #comment-write{ margin-top: 60px;}
