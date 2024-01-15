@@ -28,6 +28,8 @@ public interface BbsService {
 
 	List<CountryDto> getCountryList();
 
+	List<HashTag> getHashtagList(int bbsId);
+
 	Long selectCountryBbs(Long countryId);
 
 	List<CountryDto> findCountryById(int bbsId);

@@ -37,4 +37,6 @@ public interface BbsMapper {
 	List<CountryDto> findCountryById(int bbsId);
 
     int selectId(int bbsId);
+
+	List<HashTag> getHashtagList(int bbsId);
 }
