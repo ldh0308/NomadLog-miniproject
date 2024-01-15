@@ -53,8 +53,12 @@ public class MemberController {
 	}
 
 	@GetMapping("/login")
-	public String loginForm() {
-		return "/member/login";
+	public String loginForm(HttpSession session) {
+		if(session.getAttribute("loginId") != null) {
+			return "redirect:/bbs";
+		}else {
+			return "member/login";
+		}
 	}
 
 	@PostMapping("/login")
